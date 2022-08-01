@@ -267,7 +267,7 @@ s_{1}
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-08-01 10:35:27 / 修改时间：13:52:42" itemprop="dateCreated datePublished" datetime="2022-08-01T10:35:27+08:00">2022-08-01</time>
+      <time title="创建时间：2022-08-01 10:35:27 / 修改时间：13:59:22" itemprop="dateCreated datePublished" datetime="2022-08-01T10:35:27+08:00">2022-08-01</time>
     </span>
 
   
@@ -344,30 +344,46 @@ complex.</p>
 </ul>
 <h3 id="指令">指令</h3>
 <p><strong>Instruction Syntax is rigid:</strong> <strong>op dst, src1,
-src2</strong> - 1 operator, 3 operands - op = operation name
-(“operator”) - dst = register getting result (“destination”) - src1 =
-first register for operation (“source 1”) - src2 = second register for
-operation (“source 2”)</p>
+src2</strong></p>
+<ul>
+<li>1 operator, 3 operands
+<ul>
+<li>op = operation name (“operator”)</li>
+<li>dst = register getting result (“destination”)</li>
+<li>src1 = first register for operation (“source 1”)</li>
+<li>src2 = second register for operation (“source 2”)</li>
+</ul></li>
+</ul>
 <h4 id="算数指令">算数指令</h4>
-<p>c: <code>a = (b + c) - (d + e)</code> risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add s0 t1 t2 # b+c</span><br><span class="line">add s1 t3 t4 # d+e</span><br><span class="line">sub s2 s0 s1 # (b+c) - (d+e)</span><br></pre></td></tr></table></figure> #### 立即数
-c: <code>a = c + 5</code></p>
+<p>c: <code>a = (b + c) - (d + e)</code></p>
+<p>risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add s0 t1 t2 # b+c</span><br><span class="line">add s1 t3 t4 # d+e</span><br><span class="line">sub s2 s0 s1 # (b+c) - (d+e)</span><br></pre></td></tr></table></figure> #### 立即数 c: <code>a = c + 5</code></p>
 <p>risc: <code>addi s0 s1 5</code></p>
 <h4 id="数据传输指令">数据传输指令</h4>
-<p><strong>Instruction syntax for data transfer:</strong> - memop reg,
-off(bAddr) - memop = operation name (“operator”) - reg = register for
-operation source or destination - bAddr = register with pointer to
-memory (“base address”) - off = address offset (immediate) in bytes
-(“offset”)</p>
+<p><strong>Instruction syntax for data transfer:</strong></p>
+<ul>
+<li>memop reg, off(bAddr)
+<ul>
+<li>memop = operation name (“operator”)</li>
+<li>reg = register for operation source or destination</li>
+<li>bAddr = register with pointer to memory (“base address”)</li>
+<li>off = address offset (immediate) in bytes (“offset”)</li>
+</ul></li>
+</ul>
 <p>c: <code>a[10] = a[3] + b</code></p>
-<p>risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lw t0, 12(s3)     </span><br><span class="line">add t0 s1 t0</span><br><span class="line">sw t0, 40(s3) # 将t0 存入 s3</span><br></pre></td></tr></table></figure> <strong>大端小端</strong> - 大端 &gt;
-Most-significant byte at least address of word - 小端 &gt;
-Least-significant byte at least address of word risc v 使用的是
-小端法</p>
+<p>risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lw t0, 12(s3)     </span><br><span class="line">add t0 s1 t0</span><br><span class="line">sw t0, 40(s3) # 将t0 存入 s3</span><br></pre></td></tr></table></figure> <strong>大端小端</strong></p>
+<ul>
+<li>大端 &gt; Most-significant byte at least address of word</li>
+<li>小端 &gt; Least-significant byte at least address of word</li>
+</ul>
+<p>risc v 使用的是 小端法</p>
 <p><strong>字节操作</strong></p>
-<p>For example, let s0 = 0x00000180: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lb s1,1(s0)</span><br><span class="line">lb s2,0(s0)</span><br><span class="line">sb s2,2(s0)</span><br><span class="line">48</span><br><span class="line"># s1=0x00000001</span><br><span class="line"># s2=0xFFFFFF80</span><br><span class="line"># *(s0)=0x00800180</span><br></pre></td></tr></table></figure> 注意细节 -
-小标从0开始 - 由于数据以小端方式存储，引用数据是从地位向高位计算子节数 -
-一个子节8位 =&gt; 两位16进制 - 注意符号扩展</p>
+<p>For example, let s0 = 0x00000180:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lb s1,1(s0)</span><br><span class="line">lb s2,0(s0)</span><br><span class="line">sb s2,2(s0)</span><br><span class="line">48</span><br><span class="line"># s1=0x00000001</span><br><span class="line"># s2=0xFFFFFF80</span><br><span class="line"># *(s0)=0x00800180</span><br></pre></td></tr></table></figure>
+<p>注意细节 - 小标从0开始 -
+由于数据以小端方式存储，引用数据是从地位向高位计算子节数 - 一个子节8位
+=&gt; 两位16进制 - 注意符号扩展</p>
 <h3 id="流程控制">流程控制</h3>
+<p>qwqw</p>
 
       
     </div>
