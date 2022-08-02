@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=LXGW+WenKai+Screen:300,300italic,400,400italic,700,700italic%7CCalibri:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=LXGW+WenKai+Screen:300,300italic,400,400italic,700,700italic%7Csans-serif:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
@@ -362,7 +362,7 @@ s_{1}
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/01/cs61c-intro-risc/" class="post-title-link" itemprop="url">cs61c_intro_risc</a>
+          <a href="/2022/08/01/cs61c-intro-risc/" class="post-title-link" itemprop="url">CS61c 1</a>
         </h2>
 
         <div class="post-meta-container">
@@ -372,9 +372,15 @@ s_{1}
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-08-01 10:35:27 / 修改时间：18:43:28" itemprop="dateCreated datePublished" datetime="2022-08-01T10:35:27+08:00">2022-08-01</time>
+      <time title="创建时间：2022-08-01 10:35:27" itemprop="dateCreated datePublished" datetime="2022-08-01T10:35:27+08:00">2022-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-02 10:51:54" itemprop="dateModified" datetime="2022-08-02T10:51:54+08:00">2022-08-02</time>
     </span>
 
   
@@ -387,71 +393,85 @@ s_{1}
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="isa-的概念">ISA 的概念</h2>
-<h3 id="risc-和-cisc">RISC 和 CISC</h3>
+          <h2 id="isa-的概念"><a class="markdownIt-Anchor" href="#isa-的概念"></a> ISA 的概念</h2>
+<h3 id="risc-和-cisc"><a class="markdownIt-Anchor" href="#risc-和-cisc"></a> RISC 和 CISC</h3>
 <p>上世纪有两种流行的计算机组织结构</p>
 <ul>
-<li><p>CISC <strong>Complex Instruction Set Computer</strong></p>
+<li>
+<p>CISC <strong>Complex Instruction Set Computer</strong></p>
 <blockquote>
-<p>The main idea behind this is to make hardware simpler by using an
-instruction set composed of a few basic steps for loading, evaluating,
-and storing operations just like a load command will load data, a store
-command will store the data.</p>
-</blockquote></li>
-<li><p>RISC <strong>reduced Instruction Set Computer</strong></p>
+<p>The main idea behind this is to make hardware simpler by using an instruction set composed of a few basic steps for loading, evaluating, and storing operations just like a load command will load data, a store command will store the data.</p>
+</blockquote>
+</li>
+<li>
+<p>RISC <strong>reduced Instruction Set Computer</strong></p>
 <blockquote>
-<p>The main idea is that a single instruction will do all loading,
-evaluating, and storing operations just like a multiplication command
-will do stuff like loading data, evaluating, and storing it, hence it’s
-complex.</p>
+<p>The main idea is that a single instruction will do all loading, evaluating, and storing operations just like a multiplication command will do stuff like loading data, evaluating, and storing it, hence it’s complex.</p>
 <p>Philosophy developed by Cocke IBM, Patterson, Hennessy, 1980s</p>
-</blockquote></li>
+</blockquote>
+</li>
 </ul>
 <p>基于这两类组织结构，硬件工程师开发了多种不同的指令集(ISA)</p>
-<h3 id="isa-example">ISA example</h3>
+<h3 id="isa-example"><a class="markdownIt-Anchor" href="#isa-example"></a> ISA example</h3>
 <ul>
-<li><p>基于 CISC 开发</p>
+<li>
+<p>基于 CISC 开发</p>
 <ul>
 <li>Intel x86</li>
-</ul></li>
-<li><p>基于 RISC 开发</p>
+</ul>
+</li>
+<li>
+<p>基于 RISC 开发</p>
 <ul>
-<li><p>ARM</p></li>
-<li><p>RISC I - V</p>
+<li>
+<p>ARM</p>
+</li>
+<li>
+<p>RISC I - V</p>
 <blockquote>
 <p>1981年 由 berkelay</p>
-</blockquote></li>
-<li><p>MIPS</p></li>
-</ul></li>
+</blockquote>
+</li>
+<li>
+<p>MIPS</p>
+</li>
 </ul>
-<h2 id="risc">RISC</h2>
+</li>
+</ul>
+<h2 id="risc"><a class="markdownIt-Anchor" href="#risc"></a> RISC</h2>
 <ul>
 <li>risc设计思想是当前芯片设计的主导</li>
-<li>目前 intel x86 的底层也使用了 risc
-的思想，即将一条复杂的指令拆分成多条简单指令执行</li>
+<li>目前 intel x86 的底层也使用了 risc 的思想，即将一条复杂的指令拆分成多条简单指令执行</li>
 </ul>
-<h2 id="risc-v">RISC V</h2>
-<h3 id="registers">registers</h3>
+<h2 id="risc-v"><a class="markdownIt-Anchor" href="#risc-v"></a> RISC V</h2>
+<h3 id="registers"><a class="markdownIt-Anchor" href="#registers"></a> registers</h3>
 <ul>
-<li>RISC V 由32个寄存器 <span class="math inline">\(x_0\)</span> - <span class="math inline">\(x_{31}\)</span>组成</li>
-<li>可以使用 <strong>数字</strong> 或者 <strong>寄存器名</strong>
-来引用寄存器
+<li>
+<p>RISC V 由32个寄存器 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>31</mn></msub></mrow><annotation encoding="application/x-tex">x_{31}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>组成</p>
+</li>
+<li>
+<p>可以使用 <strong>数字</strong> 或者 <strong>寄存器名</strong> 来引用寄存器</p>
 <ul>
-<li>保存变量名 <span class="math inline">\(s_0\)</span> - <span class="math inline">\(s_1\)</span> &lt;=&gt; <span class="math inline">\(x_8\)</span> - <span class="math inline">\(x_9\)</span>,</li>
+<li>保存变量名<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">s_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">s_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> &lt;=&gt; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">x_8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>9</mn></msub></mrow><annotation encoding="application/x-tex">x_9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>,</li>
 </ul>
-<span class="math inline">\(s_2\)</span> - <span class="math inline">\(s_{11}\)</span> &lt;=&gt; <span class="math inline">\(x_{18}\)</span> - <span class="math inline">\(x_{27}\)</span>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">s_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>11</mn></msub></mrow><annotation encoding="application/x-tex">s_{11}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> &lt;=&gt; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>18</mn></msub></mrow><annotation encoding="application/x-tex">x_{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>27</mn></msub></mrow><annotation encoding="application/x-tex">x_{27}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">7</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 <ul>
-<li>保存临时变量 <span class="math inline">\(s_0\)</span> - <span class="math inline">\(s_2\)</span> &lt;=&gt; <span class="math inline">\(x_5\)</span> - <span class="math inline">\(x_7\)</span>,</li>
+<li>保存临时变量<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">s_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">s_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> &lt;=&gt; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>5</mn></msub></mrow><annotation encoding="application/x-tex">x_5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>7</mn></msub></mrow><annotation encoding="application/x-tex">x_7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>,</li>
 </ul>
-<span class="math inline">\(s_3\)</span> - <span class="math inline">\(s_{6}\)</span> &lt;=&gt; <span class="math inline">\(x_{28}\)</span> - <span class="math inline">\(x_{31}\)</span></li>
-<li><span class="math inline">\(x_0\)</span> 是
-<strong>0寄存器</strong>, 其值永远是 <span class="math inline">\(0\)</span></li>
-<li>存储在寄存器中的数值 <strong>没有</strong>
-类型之分，数值的类型取决于对数值进行的操作</li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">s_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>6</mn></msub></mrow><annotation encoding="application/x-tex">s_{6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> &lt;=&gt; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>28</mn></msub></mrow><annotation encoding="application/x-tex">x_{28}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>31</mn></msub></mrow><annotation encoding="application/x-tex">x_{31}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是 <strong>0寄存器</strong>, 其值永远是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p>
+</li>
+<li>
+<p>存储在寄存器中的数值 <strong>没有</strong> 类型之分，数值的类型取决于对数值进行的操作</p>
+</li>
 </ul>
-<h3 id="指令">指令</h3>
-<p><strong>Instruction Syntax is rigid:</strong> <strong>op dst, src1,
-src2</strong></p>
+<h3 id="指令"><a class="markdownIt-Anchor" href="#指令"></a> 指令</h3>
+<p><strong>Instruction Syntax is rigid:</strong><br>
+<strong>op dst, src1, src2</strong></p>
 <ul>
 <li>1 operator, 3 operands
 <ul>
@@ -459,30 +479,44 @@ src2</strong></p>
 <li>dst = register getting result (“destination”)</li>
 <li>src1 = first register for operation (“source 1”)</li>
 <li>src2 = second register for operation (“source 2”)</li>
-</ul></li>
 </ul>
-<h4 id="算数指令">算数指令</h4>
+</li>
+</ul>
+<h4 id="算数指令"><a class="markdownIt-Anchor" href="#算数指令"></a> 算数指令</h4>
 <p>c: <code>a = (b + c) - (d + e)</code></p>
-<p>risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add s0 t1 t2 # b+c</span><br><span class="line">add s1 t3 t4 # d+e</span><br><span class="line">sub s2 s0 s1 # (b+c) - (d+e)</span><br></pre></td></tr></table></figure></p>
-<h4 id="立即数">立即数</h4>
+<p>risc:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add s0 t1 t2 # b+c</span><br><span class="line">add s1 t3 t4 # d+e</span><br><span class="line">sub s2 s0 s1 # (b+c) - (d+e)</span><br></pre></td></tr></table></figure>
+<h4 id="立即数"><a class="markdownIt-Anchor" href="#立即数"></a> 立即数</h4>
 <p>c: <code>a = c + 5</code></p>
 <p>risc: <code>addi s0 s1 5</code></p>
-<h4 id="数据传输指令">数据传输指令</h4>
+<h4 id="数据传输指令"><a class="markdownIt-Anchor" href="#数据传输指令"></a> 数据传输指令</h4>
 <p><strong>Instruction syntax for data transfer:</strong></p>
 <ul>
 <li>memop reg, off(bAddr)
 <ul>
 <li>memop = operation name (“operator”)</li>
 <li>reg = register for operation source or destination</li>
-<li>bAddr = register with pointer to memory (“base address”)</li>
+<li>bAddr = register with pointer to memory (“base<br>
+address”)</li>
 <li>off = address offset (immediate) in bytes (“offset”)</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>c: <code>a[10] = a[3] + b</code></p>
-<p>risc: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lw t0, 12(s3)     </span><br><span class="line">add t0 s1 t0</span><br><span class="line">sw t0, 40(s3) # 将t0 存入 s3</span><br></pre></td></tr></table></figure> <strong>大端小端</strong></p>
+<p>risc:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lw t0, 12(s3)     </span><br><span class="line">add t0 s1 t0</span><br><span class="line">sw t0, 40(s3) # 将t0 存入 s3</span><br></pre></td></tr></table></figure>
+<p><strong>大端小端</strong></p>
 <ul>
-<li>大端 &gt; Most-significant byte at least address of word</li>
-<li>小端 &gt; Least-significant byte at least address of word</li>
+<li>大端
+<blockquote>
+<p>Most-significant byte at least address of word</p>
+</blockquote>
+</li>
+<li>小端
+<blockquote>
+<p>Least-significant byte at least address of word</p>
+</blockquote>
+</li>
 </ul>
 <p>risc v 使用的是 小端法</p>
 <p><strong>字节操作</strong></p>
@@ -495,8 +529,39 @@ src2</strong></p>
 <li>一个子节8位 =&gt; 两位16进制</li>
 <li>注意符号扩展</li>
 </ul>
-<h3 id="流程控制">流程控制</h3>
-
+<h3 id="流程控制"><a class="markdownIt-Anchor" href="#流程控制"></a> 流程控制</h3>
+<ul>
+<li>Branch if equal
+<ul>
+<li>beq reg1, reg2, label</li>
+<li>if v(reg1) == v(reg2)</li>
+<li>go to label</li>
+</ul>
+</li>
+<li>Branch if not equal
+<ul>
+<li>neq reg1, reg2, label</li>
+<li>if v(reg1) != v(reg2)</li>
+<li>go to label</li>
+</ul>
+</li>
+<li>jump
+<ul>
+<li>j label</li>
+<li>unconditional jump to label</li>
+</ul>
+</li>
+</ul>
+<div class="note info">
+  <p>
+  In cpp
+    <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i ==j) a = b</span><br><span class="line"><span class="keyword">else</span> a = -b</span><br></pre></td></tr></table></figure>
+  </p>
+  <p>
+    In risc 5
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># i -&gt; s0, j -&gt; s1</span></span><br><span class="line"><span class="comment"># a -&gt; s2, b -&gt; s3</span></span><br><span class="line">beq s0, s1, <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">then</span>:  <span class="comment"># if true</span></span><br><span class="line">  add s2 s3 x0</span><br><span class="line">  j end</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>: <span class="comment"># if false</span></span><br><span class="line">  sub s2 x0 x3</span><br><span class="line">  j end</span><br><span class="line"></span><br><span class="line">end:</span><br></pre></td></tr></table></figure>
+  </p>
+</div>
       
     </div>
 
