@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "ff69bfaf8d59e322",
+    "type": "split",
+    "children": [
+      {
+        "id": "e8ad547e7d5f9c7c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "CS61/CS61b/week 3/testing/testing.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "75ffe75a74c15e1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "633a06b6ed375def",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97172e36217d9473",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "55bf85c0b71f97cc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4e1965985bf547e3",
+    "type": "split",
+    "children": [
+      {
+        "id": "7bea20cb7aad5ad6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "103a95f2f2ea440c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CS61/CS61b/week 3/testing/testing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 235.1999969482422,
+    "collapsed": true
+  },
+  "active": "e8ad547e7d5f9c7c",
+  "lastOpenFiles": [
+    "CS61/CS61b/week 3/testing/testing.md",
+    "CS61/CS61b/week 3/week 3.md",
+    "Alogrithm/素数筛.md",
+    "Alogrithm/单调队列.md",
+    "CS61/CS61b/week one/idea 的样式/image/image_3-VxlYTr5O.png",
+    "CS61/CS61b/week 4/java lib and ADT/java lib and ADT.md",
+    "CS61/CS61b/week 4/Intro and interface/Intro and interface.md",
+    "CS61/CS61b/week 6/package assess control/package assess control.md",
+    "CS61/CS61b/week 6/package assess control/Private/Private.md",
+    "CS61/CS61b/week 6/package assess control/Package private/Package private.md"
+  ]
+}
