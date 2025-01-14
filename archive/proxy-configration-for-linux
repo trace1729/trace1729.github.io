@@ -1,0 +1,69 @@
+---
+title: proxy configration for linux
+date: 2022-07-31 19:38:49
+tags: tools
+---
+# 在阿里云服务器上配置代理流程记录
+
+## 购买机场订阅
+
+* [大机场](https://xn--mesr8b36x.net/#/dashboard)
+* ......
+
+## 下载clash
+
+* 搜索[clash for windows](https://github.com/Fndroid/clash_for_windows_pkg/releases), 选择 [Clash.for.Windows.Setup.0.19.25.exe](https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.25/Clash.for.Windows.Setup.0.19.25.exe) 下载，安装
+
+## 配置clash （windows）
+
+* 从机场官网将地址一键导入clash，打开以下五个选项
+
+  ![image](image-20220730124903-sb5dp9x.png)​
+* 进入 profile, 选择 在文件夹打开配置文件
+
+  ![image](image-20220730125019-gbbsdwd.png)​
+* 将文件夹中的配置文件，复制到linux 主机上的特定目录下（假定我们放置在了/home/trace/clash 文件夹中）
+
+## linux 端 clash 配置
+
+### 下载clash
+
+* 进入[clash](https://github.com/Dreamacro/clash/releases)的github relesse页面, 下载[clash-freebsd-amd64-v3-v1.11.4.gz](https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-freebsd-amd64-v3-v1.11.4.gz)，并上传到linux主机的clash文件夹中
+
+### 解压文件
+
+* gzip -d {filename}  => .gz 后缀
+* tar -xf {filename}  => .tar.gz 后缀
+
+### 添加可执行权限
+
+* chmod +x clash-freebsd-amd64-v3-v1.11.4
+
+### 运行
+
+```bash
+./clash-freebsd-amd64-v3-v1.11.4 -f {你的订阅文件名}.yml 2>&1
+
+sudo vim ~/.zshrc
+	在文件最后加入以下两行
+	export http_proxy=http://127.0.0.1:7890
+	export https_proxy=http://127.0.0.1:7890
+测试
+	curl www.google.com
+```
+
+### 终止运行
+
+* 杀进程
+
+  ```bash
+  ps -ef | grep clash
+  kill -9 {pid} 
+  ```
+* 取消代理
+
+  ```bash
+  unset http_proxy
+  unset https_proxy
+  unset no_proxy
+  ```

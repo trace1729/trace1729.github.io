@@ -1,0 +1,4473 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Spring%20MVC/">
+      
+      
+        <link rel="next" href="../../tools/Manjaro%2BWindows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Spring Security - blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/status.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#springsecurity" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="blog" class="md-header__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spring Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/trace1729/trace1729.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        
+  
+    
+  
+  写作指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../archive/cs61c-intro-risc/" class="md-tabs__link">
+          
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../PA2%20summery/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="blog" class="md-nav__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/trace1729/trace1729.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写作指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/cs61c-intro-risc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS61C 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/math-equation-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    math_equation_test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/%E8%80%83%E7%A0%94/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    考研
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PA2%20summery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee219/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EE219 project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../org-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of Contents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verilog_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字电路实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    15445 Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            15445 Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15445%20Database/p0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6.s081 OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.s081 OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/interview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The starting process of xv6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab5%28cow%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab5(cow)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab6%28scheduling%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab6(scheduling)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/summery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.s081 总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Algo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    算法笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/Room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/coroutine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coroutine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/dataStore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dataStore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/kotlin_syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kotlin syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/material_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/navigation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/viewModel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    viewModel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/%E7%88%AC%E8%99%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    爬虫分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    需求文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CS106L cpp 
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            CS106L cpp 
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/cpp%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cpp笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/operator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/template_function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            DL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深度学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深度学习论文笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java Spring
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Java Spring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%20SSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java SSM笔记（一）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%20SSM%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL高级
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spring%20MVC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spring Security
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Spring Security
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#springsecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SpringSecurity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络安全基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络安全基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      测试环境搭建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSRF跨站请求伪造攻击
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFA会话固定攻击
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      XSS跨站脚本攻击
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发环境配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      认证
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="认证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于内存验证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于数据库验证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义验证
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义登录界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      记住我功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      授权
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="授权">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于角色授权
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于权限授权
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用注解权限判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      内部机制探究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内部机制探究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      授权校验流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全上下文
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全上下文持久化过滤器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      实战：图书管理系统
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/Manjaro%2BWindows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manjaro+Windows 双系统安装教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分享会
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%8B%BE%E9%81%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用配置拾遗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_4" id="__nav_4_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sysadmin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sysadmin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab4%28systemd%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab5%28network%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab6%28network%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network 进阶版 (包含 nginx)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab7%28encrypt%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encrypt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sysadmin/lab9%28docker%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_5" id="__nav_4_12_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实用网站
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            实用网站
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/%E5%85%AC%E5%BC%80%E8%AF%BE%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    公开课网站
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    一生一芯
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            一生一芯
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%80%E7%94%9F%E4%B8%80%E8%8A%AF/PA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PA1 复盘
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#springsecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SpringSecurity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络安全基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络安全基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      测试环境搭建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSRF跨站请求伪造攻击
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFA会话固定攻击
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      XSS跨站脚本攻击
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发环境配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      认证
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="认证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于内存验证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于数据库验证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义验证
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义登录界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      记住我功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      授权
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="授权">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于角色授权
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于权限授权
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用注解权限判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      内部机制探究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内部机制探究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      授权校验流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全上下文
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全上下文持久化过滤器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      实战：图书管理系统
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Spring Security</h1>
+
+<p><img alt="image-20230701170904832" src="https://fast.itbaima.net/2023/07/01/FyOIH7ZU5sE2gen.png" />image-20230701170904832</p>
+<h2 id="springsecurity">SpringSecurity</h2>
+<p>基于Spring6的重制版，截止目前，最新的版本是6.1.1版本。</p>
+<p>前置课程：《Spring核心内容》《SpringMvc》《JavaWeb》《Java9-17新特性》</p>
+<p>安全是开发者永远绕不开的话题，一个不安全的网站，往往存在着各种致命漏洞，只要被不法分子稍加利用，就能直接击溃整个网站，甚至破坏网站宝贵的用户数据。而用户的授权校验，则是网站安全系统的典型代表，这也是用户访问网站的第一关，我们需要一个更加安全和可靠的授权校验框架，才能让我们的网站更加稳定。</p>
+<p>SpringSecurity是一个基于Spring开发的非常强大的权限验证框架，其核心功能包括：</p>
+<ul>
+<li>认证 （用户登录）</li>
+<li>授权 （此用户能够做哪些事情）</li>
+<li>攻击防护 （防止伪造身份攻击）</li>
+</ul>
+<p>本章，我们会从多个方面对此框架进行介绍，让各位小伙伴能够在自己的项目中使用更加安全和可靠的身份校验方案。</p>
+<h2 id="_1">网络安全基础</h2>
+<p>网络安全是当今互联网时代非常重要的一个议题。在信息爆炸的今天，网络安全问题频频发生，给个人和组织带来了严重的损失和威胁，随着技术的发展和互联网的普及，我们越来越意识到网络安全已经成为一个全球性的挑战。本部分，我们会给各位小伙伴介绍网络安全的相关概念，以及常见的Web服务器攻击形式，如果你已经了解相关内容，可以直接跳过本板块。</p>
+<p>其中比较典型的案例有以下几个：</p>
+<p><img alt="image-20230701174518205" src="https://fast.itbaima.net/2023/07/01/W3oCIbqvLUn492J.png" />image-20230701174518205</p>
+<p>在2017年，一款名叫WannaCry的勒索软件席卷全球，导致全球大量计算机受到影响，得益于全球网络的发达，这款病毒从小规模很快发展至全球范围，勒索病毒是自熊猫烧香以来影响力最大的病毒之一。</p>
+<blockquote>
+<p>WannaCry（又叫Wanna Decryptor），一种“蠕虫式”的<a href="https://baike.baidu.com/item/%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92/16623990?fromModule=lemma_inlink">勒索病毒</a>软件，大小3.3MB，由不法分子利用<a href="https://baike.baidu.com/item/NSA/1128824?fromModule=lemma_inlink">NSA</a>（National Security Agency，<a href="https://baike.baidu.com/item/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80/300052?fromModule=lemma_inlink">美国国家安全局</a>）泄露的危险漏洞“EternalBlue”（永恒之蓝）进行传播 [1] 。勒索病毒肆虐，俨然是一场全球性互联网灾难，给广大电脑用户造成了巨大损失。最新统计数据显示，100多个国家和地区超过10万台电脑遭到了勒索病毒攻击、感染。 [2] 勒索病毒是自熊猫烧香以来影响力最大的<a href="https://baike.baidu.com/item/%E7%97%85%E6%AF%92/4811584?fromModule=lemma_inlink">病毒</a>之一。WannaCry勒索病毒全球大爆发，至少150个国家、30万名用户中招，造成损失达80亿美元，已经影响到金融，能源，医疗等众多行业，造成严重的危机管理问题。</p>
+</blockquote>
+<p><img alt="image-20230701175101126" src="https://fast.itbaima.net/2023/07/01/wBdynQcKU2g7LjN.png" />image-20230701175101126</p>
+<p>除了病毒在网络上传播外，还有非常恶心的DDOS攻击，这种攻击方式成本低，效率高，只要持续一段时间就能导致没有特殊防御的网站无法正常运作：</p>
+<blockquote>
+<p>2022年4月，郑州警方接到报警称，某政府网站平台于近日遭受多次DDoS攻击，导致平台访问量瞬间暴增多倍，造成数十家政府网站和政务新媒体账号无法正常访问。接到报警后，郑州警方立即开展侦查调查，第一时间锁定犯罪嫌疑人张某某，仅22小时就将犯罪嫌疑人张某某抓捕到案。</p>
+<p>经审查，张某某为某医院网络安全部技术维护人员，2022年4月2日，其个人网站被DDoS攻击，导致网站无法登陆。为减少攻击对其个人网站的影响，张某某私自将个人网站域名解析地址变更为某政府网站平台地址，“转嫁”攻击流量，致使该政府网站平台被恶意网络流量攻击，多家政府网站、政务新媒体账号不能正常使用。</p>
+<p>目前，张某某因涉嫌破坏计算机信息系统犯罪被公安机关移送起诉，案件正在进一步侦办中。</p>
+</blockquote>
+<p><img alt="image-20230701175235964" src="https://fast.itbaima.net/2023/07/01/5aHJDMTiLOSzERn.png" />image-20230701175235964</p>
+<p>信息泄露也是非常严重的网络安全问题，我们的个人信息是我们的隐私，而在网络发达的今天，在各大APP上填写的信息很有可能会被第三方获取，从中谋取利益。</p>
+<blockquote>
+<p>今年早些时候便已发现相关安全漏洞的网络安全专家称， 一个常见漏洞导致了这场有记录以来最大规模的个人数据泄露，也是中国所遭遇最大规模的网络安全事件，造成数据被公开在互联网上，供人取用。</p>
+<p>据这些网络安全专家称，上海警方的这些记录是被安全存储的，其中包含个人姓名、身份证号码、电话号码以及警情信息，涉及近10亿中国公民的数据。他们说，但一个用于管理和访问该数据库的显示界面(dashboard)被设置在一个公开网址上，没有加设密码，任何有相对基本技术知识的人都可以轻松访问、复制或窃取库中的海量信息。</p>
+<p>暗网情报公司Shadowbyte的创始人Vinny Troia说：“他们把这么多数据暴露在外，这太疯狂了。”这家公司专门在网上扫描搜寻存在安全漏洞的数据库，早在今年1月扫描时发现了上海警方的这个数据库。</p>
+</blockquote>
+<p>个人信息数据一旦泄露，相当于别人可以通过网络直接定位你的住址、电话号码、各种社交账号、身份证信息甚至是机票、火车票、酒店开房信息等，做的再绝一定，如果这个酒店被人偷偷放了针孔摄像头，甚至还能根据记录查到你开房视频，这些事情光是想想都可怕，这等同于在互联网上“裸奔”。</p>
+<p>网络安全问题非同小可，而我们作为网站的开发者，更应该首当其冲解决这些潜在问题。接下来，我们会介绍几个常见的Web网站攻击方式，以及在后续使用SpringSecurity时如何去防范这些攻击行为。</p>
+<h3 id="_2">测试环境搭建</h3>
+<p>为了测试我们之前的网站安全性，这里我们基于Mvc框架重新搭建一个采用之前的验证方式的简易网站，首先是登录界面部分：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;登录白马银行&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action=&quot;login&quot; method=&quot;post&quot;&gt;
+    &lt;label&gt;
+      用户名：
+      &lt;input name=&quot;username&quot; type=&quot;text&quot;&gt;
+    &lt;/label&gt;
+    &lt;label&gt;
+      密码：
+      &lt;input name=&quot;password&quot; type=&quot;password&quot;&gt;
+    &lt;/label&gt;
+    &lt;button type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;div th:if=&quot;${status}&quot;&gt;登录失败，用户名或密码错误！&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>接着是登录之后的首页：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;白马银行 - 首页&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>接着是Controller部分：</p>
+<div class="highlight"><pre><span></span><code>@Controller
+public class HelloController {
+    //处理登录操作并跳转
+    @PostMapping(&quot;/login&quot;)
+    public String login(@RequestParam String username,
+                        @RequestParam String password,
+                        HttpSession session,
+                        Model model){
+        if(&quot;test&quot;.equals(username) &amp;&amp; &quot;123456&quot;.equals(password)) {
+            session.setAttribute(&quot;login&quot;, true);
+            return &quot;redirect:/&quot;;
+        } else {
+            model.addAttribute(&quot;status&quot;, true);
+            return &quot;login&quot;;
+        }
+    }
+
+    //处理首页或是登录界面跳转
+    @GetMapping(&quot;/&quot;)
+    public String index(HttpSession session){
+        if(session.getAttribute(&quot;login&quot;) != null) {
+            return &quot;index&quot;;
+        }else {
+            return &quot;login&quot;;
+        }
+    }
+}
+</code></pre></div>
+<p>这样我们就可以进行简单登录了：</p>
+<p><img alt="image-20230701184920238" src="https://fast.itbaima.net/2023/07/01/7jW5Nzki8urUhaf.png" />image-20230701184920238</p>
+<p>接着我们在首页加一个转账操作，要求填写转账人账号名称：</p>
+<div class="highlight"><pre><span></span><code>@ResponseBody
+@PostMapping(&quot;/pay&quot;)
+public JSONObject pay(@RequestParam String account,
+                      HttpSession session){
+    JSONObject object = new JSONObject();
+    //登录之后才能转账
+    if(session.getAttribute(&quot;login&quot;) != null) {
+        System.out.println(&quot;转账给&quot;+account+&quot;成功，交易已完成！&quot;);
+        object.put(&quot;success&quot;, true);
+    } else {
+        System.out.println(&quot;转账给&quot;+account+&quot;失败，用户未登录！&quot;);
+        object.put(&quot;success&quot;, false);
+    }
+    return object;
+}
+</code></pre></div>
+<p>接着我们在页面中添加一个简单的转账操作按键：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;白马银行 - 首页&lt;/title&gt;
+    &lt;script src=&quot;https://unpkg.com/axios@1.1.2/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;label&gt;
+            转账账号：
+            &lt;input type=&quot;text&quot; id=&quot;account&quot;/&gt;
+        &lt;/label&gt;
+        &lt;button onclick=&quot;pay()&quot;&gt;立即转账&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script&gt;
+function pay() {
+    const account = document.getElementById(&quot;account&quot;).value
+    axios.post(&#39;/mvc/pay&#39;, { account: account }, {
+        headers: {
+            &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;
+        }
+    }).then(({data}) =&gt; {
+        if(data.success)
+            alert(&quot;转账成功&quot;)
+        else
+            alert(&quot;转账失败&quot;)
+    })
+}
+&lt;/script&gt;
+</code></pre></div>
+<p>这样我们就成功搭建好网络安全的测试项目了，各位小伙伴请将这个项目进行保存，后面需要重复使用。</p>
+<p><img alt="image-20230701224909319" src="https://fast.itbaima.net/2023/07/01/khHj6YqSJimGKec.png" />image-20230701224909319</p>
+<h3 id="csrf">CSRF跨站请求伪造攻击</h3>
+<p>CSRF是我们要介绍的第一种攻击形式，这种攻击方式非常好理解。</p>
+<p><img alt="image-20230701181244150" src="https://fast.itbaima.net/2023/07/01/4ibrwFIPnSE81lx.png" />image-20230701181244150</p>
+<p>我们时常会在QQ上收到别人发送的钓鱼网站链接，只要你在上面登陆了你的QQ账号，那么不出意外，你的号已经在别人手中了。实际上这一类网站都属于恶意网站，专门用于盗取他人信息，执行非法操作，甚至获取他人账户中的财产，非法转账等。而这里，我们需要了解一种比较容易发生的恶意操作，从不法分子的角度去了解整个流程。</p>
+<p>我们在JavaWeb阶段已经了解了Session和Cookie的机制，在一开始的时候，服务端会给浏览器一个名为JSESSIONID的Cookie信息作为会话的唯一凭据，只要用户携带此Cookie访问我们的网站，那么我们就可以认定此会话属于哪个浏览器用户。因此，只要此会话的用户执行了登录操作，那么就可以随意访问个人信息等内容。</p>
+<p>我们来尝试模拟一下这种操作，来编写一个钓鱼网站：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;坤坤炒粉放鸡精视频在线观看&lt;/title&gt;
+    &lt;script src=&quot;https://unpkg.com/axios@1.1.2/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;iframe name=&quot;hiddenIframe&quot; hidden&gt;&lt;/iframe&gt;
+&lt;form action=&quot;http://localhost:8080/mvc/pay&quot; method=&quot;post&quot; target=&quot;hiddenIframe&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;account&quot; value=&quot;黑客&quot; hidden&gt;
+    &lt;button type=&quot;submit&quot;&gt;点击下载全套视频&lt;/button&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>这个页面并不是我们官方提供的页面，而是不法分子搭建的恶意网站。我们发现此页面中有一个表单，但是表单中的输入框被隐藏了，而我们看到的只有一个按钮，我们不知道这是一个表单，也不知道表单会提交给那个地址，这时整个页面就非常有迷惑性了。如果我们点击此按钮，那么整个表单的数据会以POST的形式发送给我们的服务端（会携带之前登陆我们网站的Cookie信息），但是这里很明显是另一个网站跳转，通过这样的方式，恶意网站就成功地在我们毫不知情的情况下引导我们执行了转账操作，当你发现上当受骗时，钱已经被转走了。</p>
+<p>我们首先作为用户，先在正常的网站进行登录：</p>
+<p><img alt="image-20230701233127287" src="https://fast.itbaima.net/2023/07/01/4wQ2iB5uhcLMJHa.png" />image-20230701233127287</p>
+<p>接着我们假装自己上当，进入到我们的钓鱼网站：</p>
+<p><img alt="image-20230701233202016" src="https://fast.itbaima.net/2023/07/01/OstNZg4doCz6S5G.png" />image-20230701233202016</p>
+<p>现在我们毫不知情，如果是正常人思维的话，就会直接点击下载全套视频，恭喜，此时后台已经转账成功了，留下一脸懵逼的你：</p>
+<p><img alt="image-20230701233317019" src="https://fast.itbaima.net/2023/07/01/mtGLhuNHxPUr6Os.png" />image-20230701233317019</p>
+<p>而这种构建恶意页面，引导用户访问对应网站执行操作的方式称为：<strong>跨站请求伪造</strong>（CSRF，Cross Site Request Forgery）</p>
+<p>显然，我们之前编写的图书管理系统就存在这样的安全漏洞，而SpringSecurity就解决了这样的问题。</p>
+<p>当然，除了通过我们自己SpringSecurity使用去解决之外，随着现在的浏览器不断发展，安全性越来越受到重视，很多浏览器都有SameSite保护机制，当用户在两个不同域名的站点操作时，默认情况下Cookie就会被自动屏蔽：</p>
+<p><img alt="a3421f74c3cee6b67d214809adb743a5" src="https://fast.itbaima.net/2023/07/01/qiLDnrFyQxpt3UB.png" />a3421f74c3cee6b67d214809adb743a5</p>
+<p>SameSite是一种安全机制，旨在防止跨站点请求伪造（CSRF）攻击，它通过限制第三方Cookie的使用来实现这一目的。在Chrome浏览器中，SameSite默认为Lax，这意味着第三方Cookie只能在用户导航到与原始站点相同的站点时发送。这同样大大提升了用户的安全性，让黑客少了许多可乘之机，不过这个机制对做实施的同学（可能）不太友好。</p>
+<h3 id="sfa">SFA会话固定攻击</h3>
+<p>这同样是利用Cookie中相同的JSESSIONID进行的攻击，会话固定攻击（Session fixation attack）是一种针对Web应用程序的安全漏洞攻击，攻击者利用这种漏洞，将一个有效的会话ID分配给用户，并诱使用户在该会话中进行操作，然后攻击者可以利用该会话ID获取用户的权限，或者通过此会话继续进行其他攻击。</p>
+<p>简单来说，就是黑客把他的JSESSIONID直接给你，你一旦使用这个ID登录，那么在后端这个ID就被认定为已登录状态，那么也就等同于他直接进入了已登录状态，从而直接访问你账号的任意内容，执行任意操作。</p>
+<p>攻击者通常使用以下几种方式进行会话固定攻击：</p>
+<ol>
+<li>会话传递：攻击者通过URL参数、表单隐藏字段、cookie等方式将会话ID传递给用户。当用户使用该会话ID登录时，攻击者就能利用该会话ID获取用户的权限。</li>
+<li>会话劫持：攻击者利用劫持用户与服务器之间的通信流量，获取到用户的会话ID，然后利用该会话ID冒充用户进行操作。</li>
+<li>会话劫持：攻击者事先获取到会话ID，并将其分配给用户，之后通过其他方式欺骗用户登录该会话。这样，攻击者就可以利用会话ID获取用户的权限。</li>
+</ol>
+<p>这里我们来尝试一下第一种方案，这里我们首先用另一个浏览器访问目标网站，此时需要登录，开始之前记得先清理一下两个浏览器的缓存，否则可能无法生效：</p>
+<p><img alt="image-20230702001501063" src="https://fast.itbaima.net/2023/07/02/LFchsWkevUwb58E.png" />image-20230702001501063</p>
+<p>这里我们直接记录下这个JSESSIONID，然后将其编写到我们的诈骗网站中，这里有一个恶意脚本，会自动将对应用户的Cookie进行替换，变成我们的JSESSIONID值：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;冠希哥全套视频&lt;/title&gt;
+    &lt;script src=&quot;https://unpkg.com/axios@1.1.2/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+      //第三方网站恶意脚本，自动修改Cookie信息
+    document.cookie = &quot;JSESSIONID=6AAF677EC2B630704A80D36311F08E01; path=/mvc; domain=localhost&quot;
+      //然后给你弄到原来的网站
+      location.href = &#39;http://localhost:8080/mvc/&#39;
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>接着我们访问这个恶意网站，然后再作为用户，去正常访问目标网站进行登录操作：</p>
+<p><img alt="image-20230702001831904" src="https://fast.itbaima.net/2023/07/02/d4YSeut3xQ7rRqh.png" />image-20230702001831904</p>
+<p>可以看到此时用户的浏览器JSESSIONID值为刚刚恶意网站伪造的值，现在我们来进行登录操作：</p>
+<p><img alt="image-20230702002007450" src="https://fast.itbaima.net/2023/07/02/aDwTcW6d58tPLBG.png" />image-20230702002007450</p>
+<p>此时我们回到一开始的浏览器，刷新之后，我们发现这个浏览器同样已经登录成功了，原理其实很简单，相当于让用户直接帮我们登录了，是不是感觉特别危险？</p>
+<p>当然，现在的浏览器同样有着对应的保护机制，Tomcat发送的SESSIONID默认是勾选了HttpOnly选项的，一旦被设定是无法被随意修改的，当然前提是先得正常访问一次网站才行，否则仍然存在安全隐患。</p>
+<blockquote>
+<p>HttpOnly是Cookie中一个属性，用于防止客户端脚本通过document.cookie属性访问Cookie，有助于保护Cookie不被跨站脚本攻击窃取或篡改。但是，HttpOnly的应用仍存在局限性，一些浏览器可以阻止客户端脚本对Cookie的读操作，但允许写操作；此外大多数浏览器仍允许通过XMLHTTP对象读取HTTP响应中的Set-Cookie头。</p>
+</blockquote>
+<p><img alt="image-20230702002624508" src="https://fast.itbaima.net/2023/07/02/8IaHk2FEMwyoXem.png" />image-20230702002624508</p>
+<p>为了彻底杜绝这个问题，登录成功之后应该重新给用户分配一个新的JSESSIONID才行，而这些都由SpringSecurity帮我们实现了。</p>
+<h3 id="xss">XSS跨站脚本攻击</h3>
+<p>前面我们介绍了两种攻击方式，不过都是从外部干涉，在外部无法干涉的情况下，我们也可以从内部击溃网站，接下来我们隆重介绍XSS跨站脚本攻击方式。</p>
+<p>XSS（跨站脚本攻击）是一种常见的网络安全漏洞，攻击者通过在合法网站中注入恶意脚本代码来攻击用户。当用户访问受到注入攻击的页面时，恶意代码会在用户的浏览器中执行，从而导致攻击者能够窃取用户的敏感信息、诱导用户操作、甚至控制用户的账号。</p>
+<p>XSS攻击常见的方式有三种：</p>
+<ol>
+<li>存储型XSS攻击：攻击者将恶意代码存储到目标网站的数据库中，当其他用户访问包含恶意代码的页面时，恶意代码会被执行。</li>
+<li>反射型XSS攻击：攻击者将恶意代码嵌入到URL中，当用户点击包含恶意代码的URL时，恶意代码会被执行。</li>
+<li>DOM-based XSS攻击：攻击者利用前端JavaScript代码的漏洞，通过修改页面的DOM结构来执行恶意代码。</li>
+</ol>
+<p>在一些社交网站上，用户可以自由发帖，而帖子是以富文本形式进行编辑和上传的，发送给后台的帖子往往是直接以HTML代码的形式，这个时候就会给黑客可乘之机了。</p>
+<p><img alt="image-20230702003831742" src="https://fast.itbaima.net/2023/07/02/jTcOaNdwDeP9qB2.png" />image-20230702003831742</p>
+<p>正常情况下，用户发帖会向后端上传以下内容，这些是经过转换得到的正常HTML代码，方便后续直接展示：</p>
+<div class="highlight"><pre><span></span><code>&lt;div class=&quot;content ql-editor&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;萨达睡觉了大数据&lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;撒大大撒大声地&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>而现在，黑客不走常规的方式发帖，而是发送以下内容给服务端：</p>
+<div class="highlight"><pre><span></span><code>&lt;div class=&quot;content ql-editor&quot;&gt;
+  &lt;p οnlοad=&quot;alert(&#39;xss&#39;)&quot;&gt;
+    &lt;strong&gt;萨达睡觉了大数据&lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;撒大大撒大声地&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>可以看到<code>p</code>标签上添加了一段JS恶意脚本，黑客可以利用这种特性，获取用户的各种信息，甚至直接发送到他的后台，这样，我们的个人信息就从网站内部被泄露了。</p>
+<p>XSS漏洞最早被发现是在1996年，由于JavaScript的出现，导致在Web应用程序中存在了一些安全问题。在1997年，高智文(Gareth Owen)也就是“XSS之父”，在他的博客中描述了一种称为“脚本注入”(script injection)的攻击技术，这就是XSS漏洞的前身。从那时起，XSS漏洞便成为了Web应用程序中的一种常见安全漏洞。</p>
+<p><img alt="image-20230702004827194" src="https://fast.itbaima.net/2023/07/02/DkzJWPxQ5BUl2tC.png" />image-20230702004827194</p>
+<p>这种攻击一般需要前端配合后端进行防御，或者后端对前端发送的内容进行安全扫描并处理，有机会我们会分享如何防范此类攻击。</p>
+<p>在了解这么多攻击方式之后，想必各位小伙伴肯定有了一定的网络安全意识，不过我们并不是网络安全专业的课程，至于更多的攻击形式，还请各位小伙伴自行了解，从下一个板块开始，我们将会正式开始SpringSecurity框架的介绍。</p>
+<hr />
+<h2 id="_3">开发环境配置</h2>
+<p>我们继续使用之前的测试项目进行教学，首先我们需要导入SpringSecurity的相关依赖，它不仅仅是一个模块，我们可以根据需求导入需要的模块，常用的是以下两个：</p>
+<div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;
+    &lt;version&gt;6.1.1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-security-config&lt;/artifactId&gt;
+    &lt;version&gt;6.1.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
+<p>接着我们需要配置SpringSecurity，与Mvc一样，需要一个初始化器：</p>
+<div class="highlight"><pre><span></span><code>public class SecurityInitializer extends AbstractSecurityWebApplicationInitializer {
+    //不用重写任何内容
+      //这里实际上会自动注册一个Filter，SpringSecurity底层就是依靠N个过滤器实现的，我们之后再探讨
+}
+</code></pre></div>
+<p>接着我们需要再创建一个配置类用于配置SpringSecurity：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity   //开启WebSecurity相关功能
+public class SecurityConfiguration {
+
+}
+</code></pre></div>
+<p>接着在根容器中添加此配置文件即可：</p>
+<div class="highlight"><pre><span></span><code>@Override
+protected Class&lt;?&gt;[] getRootConfigClasses() {
+    return new Class[]{MainConfiguration.class, SecurityConfiguration.class};
+}
+</code></pre></div>
+<p>这样，SpringSecurity的配置就完成了，我们再次运行项目，会发现无法进入的我们的页面中，无论我们访问哪个页面，都会进入到SpringSecurity为我们提供的一个默认登录页面，之后我们会讲解如何进行配置。</p>
+<p><img alt="image-20230702135644834" src="https://fast.itbaima.net/2023/07/02/dWkGc5YhNAIbP8j.png" />image-20230702135644834</p>
+<p>至此，项目环境搭建完成。</p>
+<hr />
+<h2 id="_4">认证</h2>
+<p>认证是我们网站的第一步，用户需要登录之后才能进入，这一部分我们将详细介绍如何使用SpringSecurity实现用户登录。</p>
+<h3 id="_5">基于内存验证</h3>
+<p>首先我们来看看最简单的基于内存的配置，也就是说我们直接以代码的形式配置我们网站的用户和密码，配置方式非常简单，只需要在Security配置类中注册一个Bean即可：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    @Bean   //UserDetailsService就是获取用户信息的服务
+    public UserDetailsService userDetailsService() {
+          //每一个UserDetails就代表一个用户信息，其中包含用户的用户名和密码以及角色
+        UserDetails user = User.withDefaultPasswordEncoder()
+                .username(&quot;user&quot;)
+                .password(&quot;password&quot;)
+                .roles(&quot;USER&quot;)  //角色目前我们不需要关心，随便写就行，后面会专门讲解
+                .build();
+        UserDetails admin = User.withDefaultPasswordEncoder()
+                .username(&quot;admin&quot;)
+                .password(&quot;password&quot;)
+                .roles(&quot;ADMIN&quot;, &quot;USER&quot;)
+                .build();
+        return new InMemoryUserDetailsManager(user, admin); 
+          //创建一个基于内存的用户信息管理器作为UserDetailsService
+    }
+}
+</code></pre></div>
+<p>配置完成后，我们就可以前往登录界面，进行登录操作了：</p>
+<p><img alt="image-20230702144938540" src="https://fast.itbaima.net/2023/07/02/tSGxZmv6jUDMy95.png" />image-20230702144938540</p>
+<p>登录成功后，就可以访问到我们之前的界面了：</p>
+<p><img alt="image-20230702145011992" src="https://fast.itbaima.net/2023/07/02/Z8fxKehX26AMaJI.png" />image-20230702145011992</p>
+<p>并且为了防止我们之前提到的会话固定问题，在登录之后，JSESSIONID会得到重新分配：</p>
+<p><img alt="image-20230703192441811" src="https://fast.itbaima.net/2023/07/03/mQpWZMljCt2XTd7.png" />image-20230703192441811</p>
+<p>当我们想要退出时，也可以直接访问：<a href="http://localhost:8080/mvc/logout">http://localhost:8080/mvc/logout</a> 地址，我们会进入到一个退出登录界面：</p>
+<p><img alt="image-20230702145432892" src="https://fast.itbaima.net/2023/07/02/iHQy63RxgUkvKsw.png" />image-20230702145432892</p>
+<p>退出登录后就需要重新登录才能访问我们的网站了。</p>
+<p>可以发现，在有了SpringSecurity之后，我们网站的登录验证模块相当于直接被接管了，因此，从现在开始，我们的网站不需要再自己编写登录模块了，这里我们可以直接去掉，只留下主页面：</p>
+<div class="highlight"><pre><span></span><code>@Controller
+public class HelloController {
+
+    //现在所有接口不需要任何验证了，因为Security已经帮我们做了，没登录是根本进不来的
+    @GetMapping(&quot;/&quot;)
+    public String index(){
+        return &quot;index&quot;;
+    }
+
+    @ResponseBody
+    @PostMapping(&quot;/pay&quot;)
+    public JSONObject pay(@RequestParam String account){
+        JSONObject object = new JSONObject();
+        System.out.println(&quot;转账给&quot;+account+&quot;成功，交易已完成！&quot;);
+        object.put(&quot;success&quot;, true);
+        return object;
+    }
+}
+</code></pre></div>
+<p>这样，我们的网站就成功用上了更加安全的SpringSecurity框架了。细心的小伙伴可能发现了，我们在配置用户信息的时候，报了黄标，实际上这种方式存储密码并不安全：</p>
+<p><img alt="image-20230702151123338" src="https://fast.itbaima.net/2023/07/02/yuYe5pODwqBTQh7.png" />image-20230702151123338</p>
+<p>这是因为SpringSecurity的密码校验不推荐直接使用原文进行比较，而是使用加密算法将密码进行加密（更准确地说应该进行Hash处理，此过程是不可逆的，无法解密），最后将用户提供的密码以同样的方式加密后与密文进行比较。对于我们来说，用户提供的密码属于隐私信息，直接明文存储并不好，而且如果数据库内容被窃取，那么所有用户的密码将全部泄露，这是我们不希望看到的结果，我们需要一种既能隐藏用户密码也能完成认证的机制，而Hash处理就是一种很好的解决方案，通过将用户的密码进行Hash值计算，计算出来的结果一般是单向的，无法还原为原文，如果需要验证是否与此密码一致，那么需要以同样的方式加密再比较两个Hash值是否一致，这样就很好的保证了用户密码的安全性。</p>
+<p>因此，我们在配置用户信息的时候，可以使用官方提供的BCrypt加密工具：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+      //这里将BCryptPasswordEncoder直接注册为Bean，Security会自动进行选择
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
+        UserDetails user = User
+                .withUsername(&quot;user&quot;)
+                .password(encoder.encode(&quot;password&quot;))   //这里将密码进行加密后存储
+                .roles(&quot;USER&quot;)
+                .build();
+          System.out.println(encoder.encode(&quot;password&quot;));  //一会观察一下加密出来之后的密码长啥样
+        UserDetails admin = User
+                .withUsername(&quot;admin&quot;)
+                .password(encoder.encode(&quot;password&quot;))   //这里将密码进行加密后存储
+                .roles(&quot;ADMIN&quot;, &quot;USER&quot;)
+                .build();
+        return new InMemoryUserDetailsManager(user, admin);
+    }
+}
+</code></pre></div>
+<p>这样，我们存储的密码就是更加安全的密码了：</p>
+<p><img alt="image-20230702152150157" src="https://fast.itbaima.net/2023/07/02/Vacp97MlgfNrYnR.png" />image-20230702152150157</p>
+<p><img alt="image-20230702152216162" src="https://fast.itbaima.net/2023/07/02/tk5pGDrNHWfaJXU.png" />image-20230702152216162</p>
+<p>这样，一个简单的权限校验就配置完成了，是不是感觉用起来还是挺简单的？</p>
+<p>不过，可能会有小伙伴发现，所有的POST请求都被403了：</p>
+<p><img alt="image-20230702183040922" src="https://fast.itbaima.net/2023/07/02/F94URzLh6oIBrCJ.png" />image-20230702183040922</p>
+<p>这是因为SpringSecurity自带了csrf防护，需求我们在POST请求中携带页面中的csrfToken才可以，否则一律进行拦截操作，这里我们可以将其嵌入到页面中，随便找一个地方添加以下内容：</p>
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; th:id=&quot;${_csrf.getParameterName()}&quot; th:value=&quot;${_csrf.token}&quot; hidden&gt;
+</code></pre></div>
+<p>接着在axios发起请求时，携带这个input的value值：</p>
+<div class="highlight"><pre><span></span><code>function pay() {
+    const account = document.getElementById(&quot;account&quot;).value
+    const csrf = document.getElementById(&quot;_csrf&quot;).value
+    axios.post(&#39;/mvc/pay&#39;, {
+        account: account,
+        _csrf: csrf   //携带此信息即可，否则会被拦截
+    }, {
+      ...
+</code></pre></div>
+<p>如果后续各位小伙伴遇到那种需要再form表单中提交的情况，也可以直接像下面这样给塞到表单里：</p>
+<div class="highlight"><pre><span></span><code>&lt;form action=&quot;/xxxx&quot; method=&quot;post&quot;&gt;
+      ...
+    &lt;input type=&quot;text&quot; th:name=&quot;${_csrf.getParameterName()}&quot; th:value=&quot;${_csrf.token}&quot; hidden&gt;
+      ...
+&lt;/form&gt;
+</code></pre></div>
+<p>实际上现在的浏览器已经很安全了，完全不需要使用自带的csrf防护，后面我们会讲解如何通过配置关闭csrf防护。这里温馨提醒一下，在后续各位小伙伴跟我们的实战项目时，如果遇到诸如401、403这种错误时，优先查看你的SpringSecurity配置是否错误。</p>
+<blockquote>
+<p>从Spring Security 4.0开始，默认情况下会启用CSRF保护，以防止CSRF攻击应用程序，Spring Security CSRF会针对PATCH，POST，PUT和DELETE方法的请求（不仅仅只是登陆请求，这里指的是任何请求路径）进行防护，而这里的登陆表单正好是一个POST类型的请求。在默认配置下，无论是否登陆，页面中只要发起了PATCH，POST，PUT和DELETE请求一定会被拒绝，并返回<strong>403</strong>错误<strong>（注意，这里是个究极大坑，这个没有任何提示，直接403，因此如果你不知道的话根本不清楚是什么问题，就一直卡这里了）</strong>，需要在请求的时候加入csrfToken才行，也就是"83421936-b84b-44e3-be47-58bb2c14571a"，正是csrfToken，如果提交的是表单类型的数据，那么表单中必须包含此Token字符串，键名称为"_csrf"；如果是JSON数据格式发送的，那么就需要在请求头中包含此Token字符串。</p>
+</blockquote>
+<h3 id="_6">基于数据库验证</h3>
+<p>前面我们已经实现了直接认证的方式，但是实际项目中往往都是将用户信息存储在数据库中，那么如何将其连接到数据库，通过查询数据库中的用户信息来进行用户登录呢？</p>
+<p>官方默认提供了可以直接使用的用户和权限表设计，根本不需要我们来建表，直接在Navicat中执行以下查询：</p>
+<div class="highlight"><pre><span></span><code>create table users(username varchar(50) not null primary key,password varchar(500) not null,enabled boolean not null);
+create table authorities (username varchar(50) not null,authority varchar(50) not null,constraint fk_authorities_users foreign key(username) references users(username));
+create unique index ix_auth_username on authorities (username,authority);
+</code></pre></div>
+<p>接着我们添加Mybatis和MySQL相关的依赖：</p>
+<div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.13&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+    &lt;version&gt;3.0.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-j&lt;/artifactId&gt;
+    &lt;version&gt;8.0.31&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+    &lt;version&gt;6.0.10&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
+<p>接着我们编写配置类：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    @Bean PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public DataSource dataSource(){
+          //数据源配置
+        return new PooledDataSource(&quot;com.mysql.cj.jdbc.Driver&quot;,
+                &quot;jdbc:mysql://localhost:3306/test&quot;, &quot;root&quot;, &quot;123456&quot;);
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(DataSource dataSource,
+                                                 PasswordEncoder encoder) {
+        JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
+          //仅首次启动时创建一个新的用户用于测试，后续无需创建
+               manager.createUser(User.withUsername(&quot;user&quot;)
+                      .password(encoder.encode(&quot;password&quot;)).roles(&quot;USER&quot;).build());
+        return manager;
+    }
+}
+</code></pre></div>
+<p>启动后，可以看到两张表中已经自动添加好对应的数据了：</p>
+<p><img alt="image-20230702181131252" src="https://fast.itbaima.net/2023/07/02/VG19mSConefsilH.png" />image-20230702181131252</p>
+<p><img alt="image-20230702181119809" src="https://fast.itbaima.net/2023/07/02/6uqerwFo13p9jxJ.png" />image-20230702181119809</p>
+<p>我们可以直接尝试进行登录，使用方式和之前是完全一样的：</p>
+<p><img alt="image-20230702181211157" src="https://fast.itbaima.net/2023/07/02/dVM5ltzF1ua8Y3E.png" />image-20230702181211157</p>
+<p>这样，当我们下次需要快速创建一个用户登录的应用程序时，直接使用这种方式就能快速完成了，是不是感觉特别方便。</p>
+<p>无论是我们上节课认识的InMemoryUserDetailsManager还是现在认识的JdbcUserDetailsManager，他们都是实现自UserDetailsManager接口，这个接口中有着一套完整的增删改查操作，方便我们直接对用户进行处理：</p>
+<div class="highlight"><pre><span></span><code>public interface UserDetailsManager extends UserDetailsService {
+
+  //创建一个新的用户
+    void createUser(UserDetails user);
+
+  //更新用户信息
+    void updateUser(UserDetails user);
+
+  //删除用户
+    void deleteUser(String username);
+
+  //修改用户密码
+    void changePassword(String oldPassword, String newPassword);
+
+  //判断是否存在指定用户
+    boolean userExists(String username);
+}
+</code></pre></div>
+<p>通过使用UserDetailsManager对象，我们就能快速执行用户相关的管理操作，比如我们可以直接在网站上添加一个快速重置密码的接口，首先需要配置一下JdbcUserDetailsManager，为其添加一个AuthenticationManager用于原密码的校验：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    ...
+
+    //手动创建一个AuthenticationManager用于处理密码校验
+    private AuthenticationManager authenticationManager(UserDetailsManager manager,
+                                                        PasswordEncoder encoder){
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(manager);
+        provider.setPasswordEncoder(encoder);
+        return new ProviderManager(provider);
+    }
+
+    @Bean
+    public UserDetailsManager userDetailsService(DataSource dataSource,
+                                                 PasswordEncoder encoder) throws Exception {
+        JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
+          //为UserDetailsManager设置AuthenticationManager即可开启重置密码的时的校验
+        manager.setAuthenticationManager(authenticationManager(manager, encoder));
+        return manager;
+    }
+}
+</code></pre></div>
+<p>接着我们编写一个快速重置密码的接口：</p>
+<div class="highlight"><pre><span></span><code>@ResponseBody
+@PostMapping(&quot;/change-password&quot;)
+public JSONObject changePassword(@RequestParam String oldPassword,
+                                 @RequestParam String newPassword) {
+    manager.changePassword(oldPassword, encoder.encode(newPassword));
+    JSONObject object = new JSONObject();
+    object.put(&quot;success&quot;, true);
+    return object;
+}
+</code></pre></div>
+<p>接着我们在主界面中添加一个重置密码的操作：</p>
+<div class="highlight"><pre><span></span><code>&lt;div&gt;
+    &lt;label&gt;
+        修改密码：
+        &lt;input type=&quot;text&quot; id=&quot;oldPassword&quot; placeholder=&quot;旧密码&quot;/&gt;
+        &lt;input type=&quot;text&quot; id=&quot;newPassword&quot; placeholder=&quot;新密码&quot;/&gt;
+    &lt;/label&gt;
+    &lt;button onclick=&quot;change()&quot;&gt;修改密码&lt;/button&gt;
+&lt;/div&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>function change() {
+    const oldPassword = document.getElementById(&quot;oldPassword&quot;).value
+    const newPassword = document.getElementById(&quot;newPassword&quot;).value
+    const csrf = document.getElementById(&quot;_csrf&quot;).value
+    axios.post(&#39;/mvc/change-password&#39;, {
+        oldPassword: oldPassword,
+        newPassword: newPassword,
+        _csrf: csrf
+    }, {
+        headers: {
+            &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;
+        }
+    }).then(({data}) =&gt; {
+        alert(data.success ? &quot;密码修改成功&quot; : &quot;密码修改失败，请检查原密码是否正确&quot;)
+    })
+}
+</code></pre></div>
+<p>这样我们就可以在首页进行修改密码操作了：</p>
+<p><img alt="image-20230703001525592" src="https://fast.itbaima.net/2023/07/03/akAtDrPeMdc6N3b.png" />image-20230703001525592</p>
+<p>当然，这种方式的权限校验虽然能够直接使用数据库，但是存在一定的局限性，只适合快速搭建Demo使用，不适合实际生产环境下编写，下一节我们将介绍如何实现自定义验证，以应对各种情况。</p>
+<h3 id="_7">自定义验证</h3>
+<p>有些时候，我们的数据库可能并不会像SpringSecurity默认的那样进行设计，而是采用自定义的表结构，这种情况下，上面两种方式就很难进行验证了，此时我们得编写自定义验证，来应对各种任意变化的情况。</p>
+<p>既然需要自定义，那么我们就需要自行实现UserDetailsService或是功能更完善的UserDetailsManager接口，这里为了简单，我们直接选择前者进行实现：</p>
+<div class="highlight"><pre><span></span><code>@Service
+public class AuthorizeService implements UserDetailsService {
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
+}
+</code></pre></div>
+<p>现在我们需要去实现这个<code>loadUserByUsername</code>方法，表示在验证的时候通过自定义的方式，根据给定的用户名查询用户，并封装为<code>UserDetails</code>对象返回，然后由SpringSecurity将我们返回的对象与用户登录的信息进行核验，基本流程实际上跟之前是一样的，只是现在由我们自己来提供用户查询方式。</p>
+<p>现在我们在数据库中创建一个自定义的用户表：</p>
+<p><img alt="image-20230703181046326" src="https://fast.itbaima.net/2023/07/03/ln4uZ1TFIe7qaCK.png" />image-20230703181046326</p>
+<p>随便插入一点数据：</p>
+<p><img alt="image-20230703152719655" src="https://fast.itbaima.net/2023/07/03/tToR2JPykeuCK73.png" />image-20230703152719655</p>
+<p>接着我们自行编写对应的查询操作，首先创建一个对应的实体类：</p>
+<div class="highlight"><pre><span></span><code>@Data
+public class Account {
+    int id;
+    String username;
+    String password;
+}
+</code></pre></div>
+<p>然后是根据用户名查询用户的Mapper接口：</p>
+<div class="highlight"><pre><span></span><code>public interface UserMapper {
+    @Select(&quot;select * from user where username = #{username}&quot;)
+    Account findUserByName(String username);
+}
+</code></pre></div>
+<p>最后我们在配置类上添加相应的包扫描：</p>
+<div class="highlight"><pre><span></span><code>@EnableWebMvc
+@Configuration
+@ComponentScans({
+        @ComponentScan(&quot;com.example.controller&quot;),
+        @ComponentScan(&quot;com.example.service&quot;)
+})
+@MapperScan(&quot;com.example.mapper&quot;)
+public class WebConfiguration implements WebMvcConfigurer {
+      ...
+}
+</code></pre></div>
+<p>然后我们来到Service这边进行一下完善，从数据库中进行查询：</p>
+<div class="highlight"><pre><span></span><code>@Service
+public class AuthorizeService implements UserDetailsService {
+
+    @Resource
+    UserMapper mapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Account account = mapper.findUserByName(username);
+        if(account == null)
+            throw new UsernameNotFoundException(&quot;用户名或密码错误&quot;);
+        return User
+                .withUsername(username)
+                .password(account.getPassword())
+                .build();
+    }
+}
+</code></pre></div>
+<p>这样，我们就通过自定义的方式实现了数据库信息查询，并完成用户登录操作。</p>
+<hr />
+<h2 id="_8">其他配置</h2>
+<p>前面我们介绍了如果将SpringSecurity作为我们的登录校验框架，并且实现了三种方式的校验，但是光是这样，自由度还远远不够，在实际开发场景中，我们还会面对各种各样的需求，这一部分我们接着来进行更加深层次的配置。</p>
+<h3 id="_9">自定义登录界面</h3>
+<p>虽然SpringSecurity为我们提供了一个还行的登录界面，但是很多情况下往往都是我们使用自定义的登录界面，这个时候就需要进行更多的配置了，我们还是以之前图书管理系统使用的模版为例。</p>
+<p>下载好模版后，我们将其中的两个页面和资源文件放到类路径下：</p>
+<p><img alt="image-20230703180438190" src="https://fast.itbaima.net/2023/07/03/hpZs1DLESojHJue.png" />image-20230703180438190</p>
+<p>接着我们配置对应页面的Controller控制器：</p>
+<div class="highlight"><pre><span></span><code>@Controller
+public class HelloController {
+    @GetMapping(&quot;/&quot;)
+    public String index(){
+        return &quot;index&quot;;
+    }
+
+    @GetMapping(&quot;/login&quot;)
+    public String login(){
+        return &quot;login&quot;;
+    }
+}
+</code></pre></div>
+<p>这样，我们在登录之后，就可以展示前端模版页面了：</p>
+<p><img alt="image-20230703182321093" src="https://fast.itbaima.net/2023/07/03/Zns4Vwb7zPLc6SQ.png" />image-20230703182321093</p>
+<p>不过现在依然是默认进入到SpringSecurity默认的登录界面，现在我们来配置自定义的登录界面，将我们的前端模版中的登录页面作为SpringSecurity的默认登录界面。</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+      ...
+
+        //如果你学习过SpringSecurity 5.X版本，可能会发现新版本的配置方式完全不一样
+    //新版本全部采用lambda形式进行配置，无法再使用之前的and()方法进行连接了
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                //以下是验证请求拦截和放行配置
+                .authorizeHttpRequests(auth -&gt; {
+                    auth.anyRequest().authenticated();    //将所有请求全部拦截，一律需要验证
+                })
+                //以下是表单登录相关配置
+                .formLogin(conf -&gt; {
+                    conf.loginPage(&quot;/login&quot;);   //将登录页设置为我们自己的登录页面
+                    conf.loginProcessingUrl(&quot;/doLogin&quot;); //登录表单提交的地址，可以自定义
+                    conf.defaultSuccessUrl(&quot;/&quot;);   //登录成功后跳转的页面
+                    conf.permitAll();    //将登录相关的地址放行，否则未登录的用户连登录界面都进不去
+                      //用户名和密码的表单字段名称，不过默认就是这个，可以不配置，除非有特殊需求
+                    conf.usernameParameter(&quot;username&quot;);
+                    conf.passwordParameter(&quot;password&quot;);
+                })
+                .build();
+    }
+}
+</code></pre></div>
+<p>需要配置登陆页面的地址和登陆请求发送的地址，这里登陆页面填写为<code>/login</code>，登陆请求地址为<code>/doLogin</code>，登陆页面我们刚刚已经自己编写Controller来实现了，登陆请求提交处理由SpringSecurity提供，只需要写路径就可以了。现在访问我们的网站，就可以进入到自定义的登录界面了：</p>
+<p><img alt="image-20230703184425313" src="https://fast.itbaima.net/2023/07/03/c38kewdxtn1j2V6.png" />image-20230703184425313</p>
+<p>但是我们发现，我们的页面只有一个纯文本，这是因为在获取静态资源的时候，所有的静态资源默认情况下也会被拦截，因此全部被302重定向到登录页面，这显然是不对的：</p>
+<p><img alt="image-20230703184641792" src="https://fast.itbaima.net/2023/07/03/6vXlPZprzjJLEeq.png" />image-20230703184641792</p>
+<p>因此，现在我们需要将所有的静态资源也给放行，否则登录界面都没法正常展示：</p>
+<div class="highlight"><pre><span></span><code>.authorizeHttpRequests(auth -&gt; {
+      auth.requestMatchers(&quot;/static/**&quot;).permitAll();   //将所有的静态资源放行，一定要添加在全部请求拦截之前
+      auth.anyRequest().authenticated();    //将所有请求全部拦截，一律需要验证
+})
+</code></pre></div>
+<p>再次访问我们的网站，就可以看到正常显示的登录界面了：</p>
+<p><img alt="image-20230703185027927" src="https://fast.itbaima.net/2023/07/03/LmZbihzD4vYB5GF.png" />image-20230703185027927</p>
+<p>因此，如果各位小伙伴后续在编写项目过程中发现有302的情况，一定要先检查是否因为没有放行导致被SpringSecurity给拦截了，别再遇到302一脸懵逼了。</p>
+<p>接着我们来配置登录操作，这里我们只需要配置一下登录的地址和登录按钮即可，当然，跟之前一样，要把CSRF的输入框也加上：</p>
+<div class="highlight"><pre><span></span><code>&lt;form action=&quot;doLogin&quot; method=&quot;post&quot;&gt;
+        ...
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;Email Address&quot; class=&quot;ad-input&quot;&gt;
+  ...
+  &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot; class=&quot;ad-input&quot;&gt;
+  ...
+  &lt;input type=&quot;text&quot; th:name=&quot;${_csrf.getParameterName()}&quot; th:value=&quot;${_csrf.token}&quot; hidden&gt;
+  &lt;div class=&quot;ad-auth-btn&quot;&gt;
+     &lt;button type=&quot;submit&quot; class=&quot;ad-btn ad-login-member&quot;&gt;Login&lt;/button&gt;
+  &lt;/div&gt;
+    ...
+&lt;/form&gt;
+</code></pre></div>
+<p>接着我们就可以尝试进行登录操作了：</p>
+<p><img alt="image-20230703185916404" src="https://fast.itbaima.net/2023/07/03/P2LS8uNRQ64WEvT.png" />image-20230703185916404</p>
+<p>可以看到，现在我们可以成功地登录到主页了。</p>
+<p>退出登录也是同样的操作，我们只需要稍微进行一下配置就可以实现，我们首先继续完善配置类：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    ...
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                ...
+                //以下是退出登录相关配置
+                .logout(conf -&gt; {
+                    conf.logoutUrl(&quot;/doLogout&quot;);   //退出登录地址，跟上面一样可自定义
+                    conf.logoutSuccessUrl(&quot;/login&quot;);  //退出登录成功后跳转的地址，这里设置为登录界面
+                    conf.permitAll();
+                })
+                .build();
+    }
+}
+</code></pre></div>
+<p>接着我们来稍微魔改一下页面中的退出登录按钮：</p>
+<div class="highlight"><pre><span></span><code>&lt;li&gt;
+   &lt;form action=&quot;doLogout&quot; method=&quot;post&quot;&gt;
+        &lt;input type=&quot;text&quot; th:name=&quot;${_csrf.getParameterName()}&quot; th:value=&quot;${_csrf.token}&quot; hidden&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+           &lt;i class=&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt; logout
+        &lt;/button&gt;
+   &lt;/form&gt;
+&lt;/li&gt;
+</code></pre></div>
+<p>现在我们点击右上角的退出按钮就可以退出了：</p>
+<p><img alt="image-20230703190714519" src="https://fast.itbaima.net/2023/07/03/yM8TOAxYPf3iqFs.png" />image-20230703190714519</p>
+<p>不过，可能会有小伙伴觉得，我们现在无论提交什么请求都需要Csrf校验，有些太麻烦了，实际上现在浏览器已经很安全了，没必要防御到这种程度，我们也可以直接在配置中关闭csrf校验：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+       ...
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                ...
+                //以下是csrf相关配置
+                .csrf(conf -&gt; {
+                    conf.disable();   //此方法可以直接关闭全部的csrf校验，一步到位
+                    conf.ignoringRequestMatchers(&quot;/xxx/**&quot;);   //此方法可以根据情况忽略某些地址的csrf校验
+                })
+                .build();
+    }
+}
+</code></pre></div>
+<p>这样，我们就不需要再往页面中嵌入CSRF相关的输入框了，发送请求时也不会进行校验，至此，我们就完成了简单的自定义登录界面配置。</p>
+<h3 id="_10">记住我功能</h3>
+<p>我们的网站还有一个重要的功能，就是记住我，也就是说我们可以在登陆之后的一段时间内，无需再次输入账号和密码进行登陆，相当于服务端已经记住当前用户，再次访问时就可以免登陆进入，这是一个非常常用的功能。</p>
+<p>我们之前在JavaWeb阶段，使用本地Cookie存储的方式实现了记住我功能，但是这种方式并不安全，同时在代码编写上也比较麻烦，那么能否有一种更加高效的记住我功能实现呢？</p>
+<p>SpringSecurity为我们提供了一种优秀的实现，它为每个已经登陆的浏览器分配一个携带Token的Cookie，并且此Cookie默认会被保留14天，只要我们不清理浏览器的Cookie，那么下次携带此Cookie访问服务器将无需登陆，直接继续使用之前登陆的身份，这样显然比我们之前的写法更加简便。并且我们需要进行简单配置，即可开启记住我功能：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    ...
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                ...
+                .rememberMe(conf -&gt; {
+                    conf.alwaysRemember(false);  //这里不要开启始终记住，我们需要配置为用户自行勾选
+                    conf.rememberMeParameter(&quot;remember-me&quot;);   //记住我表单字段，默认就是这个，可以不配置
+                    conf.rememberMeCookieName(&quot;xxxx&quot;);  //记住我设置的Cookie名字，也可以自定义，不过没必要
+                })
+                .build();
+    }
+}
+</code></pre></div>
+<p>配置完成后，我们需要修改一下前端页面中的表单，将记住我勾选框也作为表单的一部分进行提交：</p>
+<div class="highlight"><pre><span></span><code>&lt;div class=&quot;ad-checkbox&quot;&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;remember-me&quot; class=&quot;ad-checkbox&quot;&gt;
+        &lt;span&gt;Remember Me&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>接着我们来尝试勾选记住我选项进行登录：</p>
+<p><img alt="image-20230704211415804" src="https://fast.itbaima.net/2023/07/04/3wOt7CldbFP8yHz.png" />image-20230704211415804</p>
+<p>此时提交的表单中就已经包含记住我字段了，我们会发现，服务端返回给我们了一个记住我专属的Cookie信息：</p>
+<p><img alt="image-20230704211611369" src="https://fast.itbaima.net/2023/07/04/NB129h7IKRycXvL.png" />image-20230704211611369</p>
+<p>这个Cookie信息的过期时间并不是仅会话，而是默认保存一段时间，因此，我们关闭浏览器后下次再次访问网站时，就不需要我们再次进行登录操作了，而是直接继续上一次的登录状态。</p>
+<p>当然，由于记住我信息是存放在内存中的，我们需要保证服务器一直处于运行状态，如果关闭服务器的话，记住我信息会全部丢失，因此，如果我们希望记住我能够一直持久化保存，我们就需要进一步进行配置。我们需要创建一个基于JDBC的TokenRepository实现：</p>
+<div class="highlight"><pre><span></span><code>@Bean
+public PersistentTokenRepository tokenRepository(DataSource dataSource){
+    JdbcTokenRepositoryImpl repository = new JdbcTokenRepositoryImpl();
+      //在启动时自动在数据库中创建存储记住我信息的表，仅第一次需要，后续不需要
+    repository.setCreateTableOnStartup(true);
+    repository.setDataSource(dataSource);
+    return repository;
+}
+</code></pre></div>
+<p>然后添加此仓库：</p>
+<div class="highlight"><pre><span></span><code>.rememberMe(conf -&gt; {
+     conf.rememberMeParameter(&quot;remember-me&quot;);
+     conf.tokenRepository(repository);      //设置刚刚的记住我持久化存储库
+     conf.tokenValiditySeconds(3600 * 7);   //设置记住我有效时间为7天
+})
+</code></pre></div>
+<p>这样，我们就成功配置了数据库持久化存储记住我信息，即使我们重启服务器也不会导致数据丢失。当我们登录之后，数据库中会自动记录相关的信息：</p>
+<p><img alt="image-20230704220701000" src="https://fast.itbaima.net/2023/07/04/kIJpuWdiEGqUKBx.png" />image-20230704220701000</p>
+<p>这样，我们网站的登录系统就更加完善了。</p>
+<hr />
+<h2 id="_11">授权</h2>
+<p>用户登录后，可能会根据用户当前是身份进行角色划分，比如我们最常用的QQ，一个QQ群里面，有群主、管理员和普通群成员三种角色，其中群主具有最高权限，群主可以管理整个群的任何板块，并且具有解散和升级群的资格，而管理员只有群主的一部分权限，只能用于日常管理，普通群成员则只能进行最基本的聊天操作。</p>
+<p><img alt="image-20230704222032360" src="https://fast.itbaima.net/2023/07/04/e1IXMRgawYoGvSQ.png" />image-20230704222032360</p>
+<p>对于我们来说，用户的一个操作实际上就是在访问我们提供的<code>接口</code>(编写的对应访问路径的Servlet），比如登陆，就需要调用<code>/login</code>接口，退出登陆就要调用/<code>logout</code>接口，而我们之前的图书管理系统中，新增图书、删除图书，所有的操作都有着对应的Servlet来进行处理。因此，从我们开发者的角度来说，决定用户能否使用某个功能，只需要决定用户是否能够访问对应的Servlet即可。</p>
+<p>我们可以大致像下面这样进行划分：</p>
+<ul>
+<li>群主：<code>/login</code>、<code>/logout</code>、<code>/chat</code>、<code>/edit</code>、<code>/delete</code>、<code>/upgrade</code></li>
+<li>管理员：<code>/login</code>、<code>/logout</code>、<code>/chat</code>、<code>/edit</code></li>
+<li>普通群成员：<code>/login</code>、<code>/logout</code>、<code>/chat</code></li>
+</ul>
+<p>也就是说，我们需要做的就是指定哪些请求可以由哪些用户发起。</p>
+<p>SpringSecurity为我们提供了两种授权方式：</p>
+<ul>
+<li>基于权限的授权：只要拥有某权限的用户，就可以访问某个路径。</li>
+<li>基于角色的授权：根据用户属于哪个角色来决定是否可以访问某个路径。</li>
+</ul>
+<p>两者只是概念上的不同，实际上使用起来效果差不多。这里我们就先演示以角色方式来进行授权。</p>
+<h3 id="_12">基于角色授权</h3>
+<p>现在我们希望创建两个角色，普通用户和管理员，普通用户只能访问index页面，而管理员可以访问任何页面。</p>
+<p>首先我们需要对数据库中的角色表进行一些修改，添加一个用户角色字段，并创建一个新的用户，Test用户的角色为user，而Admin用户的角色为admin。</p>
+<p>接着我们需要配置SpringSecurity，决定哪些角色可以访问哪些页面：</p>
+<div class="highlight"><pre><span></span><code>.authorizeHttpRequests(auth -&gt; {
+    //静态资源依然全部可以访问
+    auth.requestMatchers(&quot;/static/**&quot;).permitAll();
+    //只有具有以下角色的用户才能访问路径&quot;/&quot;
+    auth.requestMatchers(&quot;/&quot;).hasAnyRole(&quot;user&quot;, &quot;admin&quot;);
+    //其他所有路径必须角色为admin才能访问
+    auth.anyRequest().hasRole(&quot;admin&quot;);
+})
+</code></pre></div>
+<p>接着我们需要稍微修改一下验证逻辑，我们在数据库中的用户表上添加一个新的字段，用于表示角色：</p>
+<p><img alt="image-20230704222733082" src="https://fast.itbaima.net/2023/07/04/1pkfGS9LrsPtjFx.png" />image-20230704222733082</p>
+<p>修改一下对应的实体类：</p>
+<div class="highlight"><pre><span></span><code>@Data
+public class Account {
+    int id;
+    String username;
+    String password;
+    String role;
+}
+</code></pre></div>
+<p>现在我们在查询用户时，需要添加其对应的角色：</p>
+<div class="highlight"><pre><span></span><code> @Override
+public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    Account account = mapper.findUserByName(username);
+    if(account == null)
+        throw new UsernameNotFoundException(&quot;用户名或密码错误&quot;);
+    return User
+            .withUsername(username)
+            .password(account.getPassword())
+            .roles(account.getRole())   //添加角色，一个用户可以有一个或多个角色
+            .build();
+}
+</code></pre></div>
+<p>这样就可以了，我们重启服务器登录看看：</p>
+<p><img alt="image-20230703182321093" src="https://fast.itbaima.net/2023/07/03/Zns4Vwb7zPLc6SQ.png" />image-20230703182321093</p>
+<p>目前依然是可以正常登录的，但是我们随便访问一个其他的页面，就会被拦截并自动退回到登录界面：</p>
+<p><img alt="image-20230704223248124" src="https://fast.itbaima.net/2023/07/04/8aoGrM9mpYt6Xie.png" />image-20230704223248124</p>
+<p>这是因为我们前面配置的是user角色，那么这个角色只能访问首页，其他的都不行，所以就会被自动拦截掉了。现在我们可以到数据库中对这个用户的角色进行修改，看看修改后是否能够访问到其他页面：</p>
+<p><img alt="image-20230704223503682" src="https://fast.itbaima.net/2023/07/04/l9YkDaRJdtrmSZj.png" />image-20230704223503682</p>
+<p>这样就可以访问其他页面不会被拦截了，不过因为我们没配置这个路径，所以出来的是404页面。</p>
+<p>通过使用角色控制页面的访问，我们就可以让某些用户只能访问部分页面。</p>
+<h3 id="_13">基于权限授权</h3>
+<p>基于权限的授权与角色类似，需要以<code>hasAnyAuthority</code>或<code>hasAuthority</code>进行判断：</p>
+<div class="highlight"><pre><span></span><code>.authorizeHttpRequests(auth -&gt; {
+    //静态资源依然全部可以访问
+    auth.requestMatchers(&quot;/static/**&quot;).permitAll();
+    //基于权限和基于角色其实差别并不大，使用方式是相同的
+    auth.anyRequest().hasAnyAuthority(&quot;page:index&quot;);
+})
+</code></pre></div>
+<p>实际上权限跟角色相比只是粒度更细，由于使用方式差不多，这里不多做阐述。</p>
+<h3 id="_14">使用注解权限判断</h3>
+<p>除了直接配置以外，我们还可以以注解形式直接配置，首先需要在配置类（注意这里是在Mvc的配置类上添加，因为这里只针对Controller进行过滤，所有的Controller是由Mvc配置类进行注册的，如果需要为Service或其他Bean也启用权限判断，则需要在Security的配置类上添加）上开启：</p>
+<div class="highlight"><pre><span></span><code>@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity   //开启方法安全校验
+public class SecurityConfiguration {
+    ...
+}
+</code></pre></div>
+<p>现在我们就可以在我们想要进行权限校验的方法上添加注解了：</p>
+<div class="highlight"><pre><span></span><code>@Controller
+public class HelloController {
+    @PreAuthorize(&quot;hasRole(&#39;user&#39;)&quot;)  //直接使用hasRole方法判断是否包含某个角色
+    @GetMapping(&quot;/&quot;)
+    public String index(){
+        return &quot;index&quot;;
+    }
+
+    ...
+}
+</code></pre></div>
+<p>通过添加<code>@PreAuthorize</code>注解，在执行之前判断判断权限，如果没有对应的权限或是对应的角色，将无法访问页面。</p>
+<p>这里其实是使用的就是我们之前讲解的SpEL表达式，我们可以直接在这里使用权限判断相关的方法，如果有忘记SpEL如何使用的可以回顾我们的Spring6核心篇。所有可以进行权限判断的方法在<code>SecurityExpressionRoot</code>类中有定义，各位小伙伴可以自行前往查看。</p>
+<p>同样的还有<code>@PostAuthorize</code>注解，但是它是在方法执行之后再进行拦截：</p>
+<div class="highlight"><pre><span></span><code>@PostAuthorize(&quot;hasRole(&#39;user&#39;)&quot;)
+@RequestMapping(&quot;/&quot;)
+public String index(){
+    System.out.println(&quot;执行了&quot;);
+    return &quot;index&quot;;
+}
+</code></pre></div>
+<p>除了Controller以外，只要是由Spring管理的Bean都可以使用注解形式来控制权限，我们可以在任意方法上添加这个注解，只要不具备表达式中指定的访问权限，那么就无法执行方法并且会返回403页面。</p>
+<div class="highlight"><pre><span></span><code>@Service
+public class UserService {
+
+    @PreAuthorize(&quot;hasAnyRole(&#39;user&#39;)&quot;)
+    public void test(){
+        System.out.println(&quot;成功执行&quot;);
+    }
+}
+</code></pre></div>
+<p>与具有相同功能的还有<code>@Secured</code>但是它不支持SpEL表达式的权限表示形式，并且需要添加"ROLE_"前缀，这里就不做演示了。</p>
+<p>我们还可以使用<code>@PreFilter</code>和<code>@PostFilter</code>对集合类型的参数或返回值进行过滤。</p>
+<p>比如：</p>
+<div class="highlight"><pre><span></span><code>@PreFilter(&quot;filterObject.equals(&#39;lbwnb&#39;)&quot;)   //filterObject代表集合中每个元素，只要满足条件的元素才会留下
+public void test(List&lt;String&gt; list){
+    System.out.println(&quot;成功执行&quot;+list);
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>@RequestMapping(&quot;/&quot;)
+public String index(){
+    List&lt;String&gt; list = new LinkedList&lt;&gt;();
+    list.add(&quot;lbwnb&quot;);
+    list.add(&quot;yyds&quot;);
+    service.test(list);
+    return &quot;index&quot;;
+}
+</code></pre></div>
+<p>与<code>@PreFilter</code>类似的<code>@PostFilter</code>这里就不做演示了，它用于处理返回值，使用方法是一样的。</p>
+<p>当有多个集合时，需要使用<code>filterTarget</code>进行指定：</p>
+<div class="highlight"><pre><span></span><code>@PreFilter(value = &quot;filterObject.equals(&#39;lbwnb&#39;)&quot;, filterTarget = &quot;list2&quot;)
+public void test(List&lt;String&gt; list, List&lt;String&gt; list2){
+    System.out.println(&quot;成功执行&quot;+list);
+}
+</code></pre></div>
+<p>至此，有关Security的基本功能，我们就全部介绍完毕了，在后面的SpringBoot阶段，我们还会继续深入使用此框架，实现更多高级的功能。</p>
+<hr />
+<h2 id="_15">内部机制探究</h2>
+<p><strong>注意：</strong>本小节内容作为选学内容，但是难度比前两章的源码部分简单得多。</p>
+<h3 id="_16">授权校验流程</h3>
+<p>最后我们再来聊一下SpringSecurity的实现原理，它本质上是依靠N个Filter实现的，也就是一个完整的过滤链（注意这里是过滤器，不是拦截器）</p>
+<p>我们就从<code>AbstractSecurityWebApplicationInitializer</code>开始下手，我们来看看它配置了什么：</p>
+<div class="highlight"><pre><span></span><code>//此方法会在启动时被调用
+public final void onStartup(ServletContext servletContext) {
+    this.beforeSpringSecurityFilterChain(servletContext);
+    if (this.configurationClasses != null) {
+        AnnotationConfigWebApplicationContext rootAppContext = new AnnotationConfigWebApplicationContext();
+        rootAppContext.register(this.configurationClasses);
+        servletContext.addListener(new ContextLoaderListener(rootAppContext));
+    }
+
+    if (this.enableHttpSessionEventPublisher()) {
+        servletContext.addListener(&quot;org.springframework.security.web.session.HttpSessionEventPublisher&quot;);
+    }
+
+    servletContext.setSessionTrackingModes(this.getSessionTrackingModes());
+      //重点在这里，这里插入了关键的FilterChain
+    this.insertSpringSecurityFilterChain(servletContext);
+    this.afterSpringSecurityFilterChain(servletContext);
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>private void insertSpringSecurityFilterChain(ServletContext servletContext) {
+    String filterName = &quot;springSecurityFilterChain&quot;;
+      //创建了一个DelegatingFilterProxy对象，它本质上也是一个Filter，但是是多个Filter的集合
+    DelegatingFilterProxy springSecurityFilterChain = new DelegatingFilterProxy(filterName);
+    String contextAttribute = this.getWebApplicationContextAttribute();
+    if (contextAttribute != null) {
+        springSecurityFilterChain.setContextAttribute(contextAttribute);
+    }
+        //通过ServletContext注册DelegatingFilterProxy这个Filter
+    this.registerFilter(servletContext, true, filterName, springSecurityFilterChain);
+}
+</code></pre></div>
+<p>我们接着来看看，<code>DelegatingFilterProxy</code>在做什么：</p>
+<div class="highlight"><pre><span></span><code>//这个是初始化方法，它由GenericFilterBean（父类）定义，在afterPropertiesSet方法中被调用
+protected void initFilterBean() throws ServletException {
+    synchronized(this.delegateMonitor) {
+        if (this.delegate == null) {
+            if (this.targetBeanName == null) {
+                this.targetBeanName = this.getFilterName();
+            }
+
+            WebApplicationContext wac = this.findWebApplicationContext();
+            if (wac != null) {
+                  //耐心点，套娃很正常
+                this.delegate = this.initDelegate(wac);
+            }
+        }
+
+    }
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>protected Filter initDelegate(WebApplicationContext wac) throws ServletException {
+    String targetBeanName = this.getTargetBeanName();
+    Assert.state(targetBeanName != null, &quot;No target bean name set&quot;);
+      //这里通过WebApplicationContext获取了一个Bean
+    Filter delegate = (Filter)wac.getBean(targetBeanName, Filter.class);
+    if (this.isTargetFilterLifecycle()) {
+        delegate.init(this.getFilterConfig());
+    }
+
+      //返回Filter
+    return delegate;
+}
+</code></pre></div>
+<p>这里我们需要添加一个断点来查看到底获取到了什么Bean。</p>
+<p>通过断点调试，我们发现这里放回的对象是一个FilterChainProxy类型的，并且调用了它的初始化方法。</p>
+<p>我们倒回去看，当Filter返回之后，<code>DelegatingFilterProxy</code>的一个成员变量<code>delegate</code>被赋值为得到的Filter，也就是FilterChainProxy对象，接着我们来看看，<code>DelegatingFilterProxy</code>是如何执行doFilter方法的。</p>
+<div class="highlight"><pre><span></span><code>public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    Filter delegateToUse = this.delegate;
+    if (delegateToUse == null) {
+        //非正常情况，这里省略...
+    }
+        //这里才是真正的调用，别忘了delegateToUse就是初始化的FilterChainProxy对象
+    this.invokeDelegate(delegateToUse, request, response, filterChain);
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>protected void invokeDelegate(Filter delegate, ServletRequest request, ServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+  //最后实际上调用的是FilterChainProxy的doFilter方法
+    delegate.doFilter(request, response, filterChain);
+}
+</code></pre></div>
+<p>所以我们接着来看，<code>FilterChainProxy</code>的doFilter方法又在干什么：</p>
+<div class="highlight"><pre><span></span><code>public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    boolean clearContext = request.getAttribute(FILTER_APPLIED) == null;
+    if (!clearContext) {
+          //真正的过滤在这里执行
+        this.doFilterInternal(request, response, chain);
+    } else {
+        //...
+    }
+}
+</code></pre></div>
+<p><img alt="image-20230705005303736" src="https://fast.itbaima.net/2023/07/05/LVxihksHZu2qN6X.png" />image-20230705005303736</p>
+<div class="highlight"><pre><span></span><code>private void doFilterInternal(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    FirewalledRequest firewallRequest = this.firewall.getFirewalledRequest((HttpServletRequest)request);
+    HttpServletResponse firewallResponse = this.firewall.getFirewalledResponse((HttpServletResponse)response);
+      //这里获取了一个Filter列表，实际上SpringSecurity就是由N个过滤器实现的，这里获取的都是SpringSecurity提供的过滤器
+      //但是请注意，经过我们之前的分析，实际上真正注册的Filter只有DelegatingFilterProxy
+      //而这里的Filter列表中的所有Filter并没有被注册，而是在这里进行内部调用
+    List&lt;Filter&gt; filters = this.getFilters((HttpServletRequest)firewallRequest);
+      //只要Filter列表不是空，就依次执行内置的Filter
+    if (filters != null &amp;&amp; filters.size() != 0) {
+        if (logger.isDebugEnabled()) {
+            logger.debug(LogMessage.of(() -&gt; {
+                return &quot;Securing &quot; + requestLine(firewallRequest);
+            }));
+        }
+                //这里创建一个虚拟的过滤链，过滤流程是由SpringSecurity自己实现的
+        FilterChainProxy.VirtualFilterChain virtualFilterChain = new FilterChainProxy.VirtualFilterChain(firewallRequest, chain, filters);
+          //调用虚拟过滤链的doFilter
+        virtualFilterChain.doFilter(firewallRequest, firewallResponse);
+    } else {
+        if (logger.isTraceEnabled()) {
+            logger.trace(LogMessage.of(() -&gt; {
+                return &quot;No security for &quot; + requestLine(firewallRequest);
+            }));
+        }
+
+        firewallRequest.reset();
+        chain.doFilter(firewallRequest, firewallResponse);
+    }
+}
+</code></pre></div>
+<p>我们来看一下虚拟过滤链的doFilter是怎么处理的：</p>
+<div class="highlight"><pre><span></span><code>//看似没有任何循环，实际上就是一个循环，是一个递归调用
+public void doFilter(ServletRequest request, ServletResponse response) throws IOException, ServletException {
+      //判断是否已经通过全部的内置过滤器，定位是否等于当前大小
+    if (this.currentPosition == this.size) {
+        if (FilterChainProxy.logger.isDebugEnabled()) {
+            FilterChainProxy.logger.debug(LogMessage.of(() -&gt; {
+                return &quot;Secured &quot; + FilterChainProxy.requestLine(this.firewalledRequest);
+            }));
+        }
+
+        this.firewalledRequest.reset();
+          //所有的内置过滤器已经完成，按照正常流程走DelegatingFilterProxy的下一个Filter
+          //也就是说这里之后就与DelegatingFilterProxy没有任何关系了，该走其他过滤器就走其他地方配置的过滤器，SpringSecurity的过滤操作已经结束
+        this.originalChain.doFilter(request, response);
+    } else {
+          //定位自增
+        ++this.currentPosition;
+          //获取当前定位的Filter
+        Filter nextFilter = (Filter)this.additionalFilters.get(this.currentPosition - 1);
+        if (FilterChainProxy.logger.isTraceEnabled()) {
+            FilterChainProxy.logger.trace(LogMessage.format(&quot;Invoking %s (%d/%d)&quot;, nextFilter.getClass().getSimpleName(), this.currentPosition, this.size));
+        }
+                //执行内部过滤器的doFilter方法，传入当前对象本身作为Filter，执行如果成功，那么一定会再次调用当前对象的doFilter方法
+          //可能最不理解的就是这里，执行的难道不是内部其他Filter的doFilter方法吗，怎么会让当前对象的doFilter方法递归调用呢？
+          //没关系，下面我们接着了解了其中一个内部过滤器就明白了
+        nextFilter.doFilter(request, response, this);
+    }
+}
+</code></pre></div>
+<p>因此，我们差不多已经了解了整个SpringSecurity的实现机制了，那么我们来随便看一个内部的过滤器在做什么。</p>
+<p>比如用于处理登陆的过滤器<code>UsernamePasswordAuthenticationFilter</code>，它继承自<code>AbstractAuthenticationProcessingFilter</code>，我们来看看它是怎么进行过滤的：</p>
+<div class="highlight"><pre><span></span><code>public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    this.doFilter((HttpServletRequest)request, (HttpServletResponse)response, chain);
+}
+
+private void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+      //如果不是登陆请求，那么根本不会理这个请求
+    if (!this.requiresAuthentication(request, response)) {
+          //直接调用传入的FilterChain的doFilter方法
+          //而这里传入的正好是VirtualFilterChain对象
+          //这下知道为什么上面说是递归了吧
+        chain.doFilter(request, response);
+    } else {
+          //如果是登陆请求，那么会执行登陆请求的相关逻辑，注意执行过程中出现任何问题都会抛出异常
+          //比如用户名和密码错误，我们之前也已经测试过了，会得到一个BadCredentialsException
+        try {
+              //进行认证
+            Authentication authenticationResult = this.attemptAuthentication(request, response);
+            if (authenticationResult == null) {
+                return;
+            }
+
+            this.sessionStrategy.onAuthentication(authenticationResult, request, response);
+            if (this.continueChainBeforeSuccessfulAuthentication) {
+                chain.doFilter(request, response);
+            }
+
+              //如果一路绿灯，没有报错，那么验证成功，执行successfulAuthentication
+            this.successfulAuthentication(request, response, chain, authenticationResult);
+        } catch (InternalAuthenticationServiceException var5) {
+            this.logger.error(&quot;An internal error occurred while trying to authenticate the user.&quot;, var5);
+              //验证失败，会执行unsuccessfulAuthentication
+            this.unsuccessfulAuthentication(request, response, var5);
+        } catch (AuthenticationException var6) {
+            this.unsuccessfulAuthentication(request, response, var6);
+        }
+
+    }
+}
+</code></pre></div>
+<p>那么我们来看看successfulAuthentication和unsuccessfulAuthentication分别做了什么：</p>
+<div class="highlight"><pre><span></span><code>protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+      //向SecurityContextHolder添加认证信息，我们可以通过SecurityContextHolder对象获取当前登陆的用户
+    SecurityContextHolder.getContext().setAuthentication(authResult);
+    if (this.logger.isDebugEnabled()) {
+        this.logger.debug(LogMessage.format(&quot;Set SecurityContextHolder to %s&quot;, authResult));
+    }
+
+      //记住我实现
+    this.rememberMeServices.loginSuccess(request, response, authResult);
+    if (this.eventPublisher != null) {
+        this.eventPublisher.publishEvent(new InteractiveAuthenticationSuccessEvent(authResult, this.getClass()));
+    }
+
+      //调用默认的或是我们自己定义的AuthenticationSuccessHandler的onAuthenticationSuccess方法
+      //这个根据我们配置文件决定
+      //到这里其实页面就已经直接跳转了
+    this.successHandler.onAuthenticationSuccess(request, response, authResult);
+}
+
+protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
+      //登陆失败会直接清理掉SecurityContextHolder中的认证信息
+    SecurityContextHolder.clearContext();
+    this.logger.trace(&quot;Failed to process authentication request&quot;, failed);
+    this.logger.trace(&quot;Cleared SecurityContextHolder&quot;);
+    this.logger.trace(&quot;Handling authentication failure&quot;);
+      //登陆失败的记住我处理
+    this.rememberMeServices.loginFail(request, response);
+      //同上，调用默认或是我们自己定义的AuthenticationFailureHandler
+    this.failureHandler.onAuthenticationFailure(request, response, failed);
+}
+</code></pre></div>
+<p>了解了整个用户验证实现流程，其实其它的过滤器是如何实现的也就很容易联想到了，SpringSecurity的过滤器从某种意义上来说，更像是一个处理业务的Servlet，它做的事情不像是拦截，更像是完成自己对应的职责，只不过是使用了过滤器机制进行实现罢了，从而将所有的验证提前到进入Controller之前。</p>
+<p>最后附上完整的过滤器清单，这里列出14个常见的内部过滤器：</p>
+<table>
+<thead>
+<tr>
+<th>过滤器名称</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DisableEncodeUrlFilter</td>
+<td>禁止 HttpServletResponse 对 URL 进行编码，以防止在 URL 中包含 Session ID，此类 URL 不被视为 URL，因为会话 ID 可能会在 HTTP 访问日志等内容中泄露。</td>
+</tr>
+<tr>
+<td>WebAsyncManagerIntegrationFilter</td>
+<td>实现了对SecurityContext与WebAsyncManager的集成，使 Controller 中能够线程安全地获取到用户上下文认证信息。</td>
+</tr>
+<tr>
+<td>SecurityContextHolderFilter</td>
+<td>通过HttpSessionSecurityContextRepository接口从Session中读取SecurityContext或是直接创建新的，然后存入到SecurityContextHolder中，最后请求结束时会进行清理。</td>
+</tr>
+<tr>
+<td>HeaderWriterFilter</td>
+<td>给HTTP响应添加一些Header属性，如：X-Frame-Options、X-XSS-Protection、X-Content-Type-Options等。</td>
+</tr>
+<tr>
+<td>CsrfFilter</td>
+<td>针对Csrf相关校验。</td>
+</tr>
+<tr>
+<td>LogoutFilter</td>
+<td>对退出登录的请求进行处理，执行登出操作。</td>
+</tr>
+<tr>
+<td>UsernamePasswordAuthenticationFilter</td>
+<td>对登录的请求进行处理，执行登录操作。</td>
+</tr>
+<tr>
+<td>ConcurrentSessionFilter</td>
+<td>检查SessionRegistry保存的Session信息是否过期。</td>
+</tr>
+<tr>
+<td>RequestCacheAwareFilter</td>
+<td>缓存Request请求，可以用于恢复因登录而打断的请求。</td>
+</tr>
+<tr>
+<td>SecurityContextHolderAwareRequestFilter</td>
+<td>对ServletRequest进行进一步包装，让Request具有更加丰富的内容。</td>
+</tr>
+<tr>
+<td>RememberMeAuthenticationFilter</td>
+<td>针对于记住我Cookie进行校验。</td>
+</tr>
+<tr>
+<td>AnonymousAuthenticationFilter</td>
+<td>未验证成功的情况下进行匿名登录操作。</td>
+</tr>
+<tr>
+<td>SessionManagementFilter</td>
+<td>Session管理相关。</td>
+</tr>
+<tr>
+<td>ExceptionTranslationFilter</td>
+<td>异常转换处理，比如最常见的AccessDenied之类的。</td>
+</tr>
+</tbody>
+</table>
+<p>各位小伙伴感兴趣的话可以自行了解。</p>
+<h3 id="_17">安全上下文</h3>
+<p>用户登录之后，怎么获取当前已经登录用户的信息呢？通过使用SecurityContextHolder就可以很方便地得到SecurityContext对象了，我们可以直接使用SecurityContext对象来获取当前的认证信息：</p>
+<div class="highlight"><pre><span></span><code>@RequestMapping(&quot;/index&quot;)
+    public String index(){
+        SecurityContext context = SecurityContextHolder.getContext();
+        Authentication authentication = context.getAuthentication();
+        User user = (User) authentication.getPrincipal();
+        System.out.println(user.getUsername());
+        System.out.println(user.getAuthorities());
+        return &quot;index&quot;;
+    }
+</code></pre></div>
+<p>通过SecurityContext我们就可以快速获取当前用户的名称和授权信息等：</p>
+<p><img alt="image-20230706215806040" src="https://fast.itbaima.net/2023/07/06/uPjdsgbhv9NqA8B.png" />image-20230706215806040</p>
+<p>除了这种方式以外，我们还可以直接从Session中获取：</p>
+<div class="highlight"><pre><span></span><code>@RequestMapping(&quot;/index&quot;)
+public String index(@SessionAttribute(&quot;SPRING_SECURITY_CONTEXT&quot;) SecurityContext context){
+    Authentication authentication = context.getAuthentication();
+    User user = (User) authentication.getPrincipal();
+    System.out.println(user.getUsername());
+    System.out.println(user.getAuthorities());
+    return &quot;index&quot;;
+}
+</code></pre></div>
+<p>注意SecurityContextHolder是有一定的存储策略的，SecurityContextHolder中的SecurityContext对象会在一开始请求到来时被设定，至于存储方式其实是由存储策略决定的，如果我们这样编写，那么在默认情况下是无法获取到认证信息的：</p>
+<div class="highlight"><pre><span></span><code>@RequestMapping(&quot;/index&quot;)
+public String index(){
+    new Thread(() -&gt; {   //创建一个子线程去获取
+        SecurityContext context = SecurityContextHolder.getContext();
+        Authentication authentication = context.getAuthentication();
+        User user = (User) authentication.getPrincipal();   //NPE
+        System.out.println(user.getUsername());
+        System.out.println(user.getAuthorities()); 
+    }).start();
+    return &quot;index&quot;;
+}
+</code></pre></div>
+<p>这是因为SecurityContextHolder的存储策略默认是<code>MODE_THREADLOCAL</code>，它是基于ThreadLocal实现的，<code>getContext()</code>方法本质上调用的是对应的存储策略实现的方法：</p>
+<div class="highlight"><pre><span></span><code>public static SecurityContext getContext() {
+    return strategy.getContext();
+}
+</code></pre></div>
+<p>SecurityContextHolderStrategy有三个实现类：</p>
+<ul>
+<li>GlobalSecurityContextHolderStrategy：全局模式，不常用</li>
+<li>ThreadLocalSecurityContextHolderStrategy：基于ThreadLocal实现，线程内可见</li>
+<li>InheritableThreadLocalSecurityContextHolderStrategy：基于InheritableThreadLocal实现，线程和子线程可见</li>
+</ul>
+<p>因此，如果上述情况需要在子线程中获取，那么需要修改SecurityContextHolder的存储策略，在初始化的时候设置：</p>
+<div class="highlight"><pre><span></span><code>@PostConstruct
+public void init(){
+    SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+}
+</code></pre></div>
+<p>这样在子线程中也可以获取认证信息了。</p>
+<p>因为用户的验证信息是基于SecurityContext进行判断的，我们可以直接修改SecurityContext的内容，来手动为用户进行登陆：</p>
+<div class="highlight"><pre><span></span><code>@RequestMapping(&quot;/auth&quot;)
+@ResponseBody
+public String auth(){
+    SecurityContext context = SecurityContextHolder.getContext();  //获取SecurityContext对象（当前会话肯定是没有登陆的）
+    UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(&quot;Test&quot;, null,
+            AuthorityUtils.commaSeparatedStringToAuthorityList(&quot;ROLE_user&quot;));  //手动创建一个UsernamePasswordAuthenticationToken对象，也就是用户的认证信息，角色需要添加ROLE_前缀，权限直接写
+    context.setAuthentication(token);  //手动为SecurityContext设定认证信息
+    return &quot;Login success！&quot;;
+}
+</code></pre></div>
+<p>在未登陆的情况下，访问此地址将直接进行手动登陆，再次访问<code>/index</code>页面，可以直接访问，说明手动设置认证信息成功。</p>
+<p><strong>疑惑：</strong>SecurityContext这玩意不是默认线程独占吗，那每次请求都是一个新的线程，按理说上一次的SecurityContext对象应该没了才对啊，为什么再次请求依然能够继续使用上一次SecurityContext中的认证信息呢？</p>
+<p>SecurityContext的生命周期：请求到来时从Session中取出，放入SecurityContextHolder中，请求结束时从SecurityContextHolder取出，并放到Session中，实际上就是依靠Session来存储的，一旦会话过期验证信息也跟着消失。</p>
+<p>下一节我们将详细讨论它的实现过程。</p>
+<h3 id="_18">安全上下文持久化过滤器</h3>
+<p>SecurityContextHolderFilter也是内置的Filter，它就是专门用于处理SecurityContext的，这里先说一下大致流程，以便我们后续更加方便地理解：</p>
+<blockquote>
+<p>当过滤器链执行到SecurityContextHolderFilter时，它会从HttpSession中把SecurityContext对象取出来（是存在Session中的，跟随会话的消失而消失），然后放入SecurityContextHolder对象中。请求结束后，再把SecurityContext存入HttpSession中，并清除SecurityContextHolder内的SecurityContext对象。</p>
+</blockquote>
+<p>我们还是直接进入到源码中：</p>
+<div class="highlight"><pre><span></span><code>    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+    //开始套娃
+        doFilter((HttpServletRequest) request, (HttpServletResponse) response, chain);
+    }
+
+    private void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+    //防止重复的安全请求，不需要关心，一般是直接走下面
+        if (request.getAttribute(FILTER_APPLIED) != null) {
+            chain.doFilter(request, response);
+            return;
+        }
+        request.setAttribute(FILTER_APPLIED, Boolean.TRUE);
+    //这里通过SecurityContextRepository的loadDeferredContext获取到SecurityContext对象的Supplier
+        Supplier&lt;SecurityContext&gt; deferredContext = this.securityContextRepository.loadDeferredContext(request);
+        ...
+    }
+</code></pre></div>
+<p>我们接着来看<code>loadDeferredContext</code>的实现细节，其中SecurityContextRepository的实现类是DelegatingSecurityContextRepository类，这个类中维护了多个SecurityContextRepository实现类，而其本身并没有实现<code>loadDeferredContext</code>方法，而是靠内部维护的其他SecurityContextRepository实现类来完成：</p>
+<div class="highlight"><pre><span></span><code>    @Override
+    public DeferredSecurityContext loadDeferredContext(HttpServletRequest request) {
+    //DeferredSecurityContext是一个支持延时生成的SecurityContext，本质是一个SecurityContext的Supplier
+        DeferredSecurityContext deferredSecurityContext = null;
+    //遍历内部维护的其他SecurityContextRepository实现，一般包含以下两个：
+    //1. HttpSessionSecurityContextRepository
+    //2. RequestAttributeSecurityContextRepository
+        for (SecurityContextRepository delegate : this.delegates) {
+      //这个if-else语句其实为了添加多个SecurityContextRepository提供的SecurityContext并将其组成一个链状结构的DelegatingDeferredSecurityContext（至于为什么，我们接着往下看）
+            if (deferredSecurityContext == null) {
+                deferredSecurityContext = delegate.loadDeferredContext(request);
+            }
+            else {
+                DeferredSecurityContext next = delegate.loadDeferredContext(request);
+                deferredSecurityContext = new DelegatingDeferredSecurityContext(deferredSecurityContext, next);
+            }
+        }
+        return deferredSecurityContext;
+    }
+</code></pre></div>
+<p>首先我们来看第一个HttpSessionSecurityContextRepository，它是第一个被遍历的实现：</p>
+<div class="highlight"><pre><span></span><code>    @Override
+    public DeferredSecurityContext loadDeferredContext(HttpServletRequest request) {
+        Supplier&lt;SecurityContext&gt; supplier = () -&gt; readSecurityContextFromSession(request.getSession(false));  //从Session中取出SecurityContext
+        return new SupplierDeferredSecurityContext(supplier, this.securityContextHolderStrategy);
+    }
+
+    public static final String SPRING_SECURITY_CONTEXT_KEY = &quot;SPRING_SECURITY_CONTEXT&quot;;
+    private String springSecurityContextKey = SPRING_SECURITY_CONTEXT_KEY;
+
+    private SecurityContext readSecurityContextFromSession(HttpSession httpSession) {
+        ...
+    //实际上这里就是从Session中通过键“SPRING_SECURITY_CONTEXT”取出的SecurityContext
+    //跟我们上一节使用的是完全一样的，这下就很清晰了
+    //如果用户没有登录验证，那么这里获取到的SecurityContext就是null了
+        Object contextFromSession = httpSession.getAttribute(this.springSecurityContextKey);
+        ...
+        return (SecurityContext) contextFromSession;
+    }
+</code></pre></div>
+<p>最后返回回去的是一个SupplierDeferredSecurityContext对象：</p>
+<div class="highlight"><pre><span></span><code>final class SupplierDeferredSecurityContext implements DeferredSecurityContext {
+
+    private static final Log logger = LogFactory.getLog(SupplierDeferredSecurityContext.class);
+
+    private final Supplier&lt;SecurityContext&gt; supplier;
+
+    private final SecurityContextHolderStrategy strategy;
+
+    private SecurityContext securityContext;
+
+    private boolean missingContext;
+
+    SupplierDeferredSecurityContext(Supplier&lt;SecurityContext&gt; supplier, SecurityContextHolderStrategy strategy) {
+        this.supplier = supplier;
+        this.strategy = strategy;
+    }
+
+    @Override
+    public SecurityContext get() {
+    //在获取SecurityContext时会进行一次初始化
+        init();
+        return this.securityContext;
+    }
+
+    @Override
+    public boolean isGenerated() {
+        init();
+    //初始化后判断是否为未登录的SecurityContext
+        return this.missingContext;
+    }
+
+    private void init() {
+    //如果securityContext不为null表示已经初始化过了
+        if (this.securityContext != null) {
+            return;
+        }
+        //直接通过supplier获取securityContext对象
+        this.securityContext = this.supplier.get();
+    //如果securityContext对象为null，那么就标记missingContext
+        this.missingContext = (this.securityContext == null);
+        if (this.missingContext) {
+      //当missingContext为真时，说明没有securityContext（一般是未登录的情况）
+      //那么就创建一个空的securityContext，不包含任何认证信息
+            this.securityContext = this.strategy.createEmptyContext();
+      //日志无视就好
+            if (logger.isTraceEnabled()) {
+                logger.trace(LogMessage.format(&quot;Created %s&quot;, this.securityContext));
+            }
+        }
+    }
+
+}
+</code></pre></div>
+<p>接着是第二个被遍历的实现RequestAttributeSecurityContextRepository类：</p>
+<div class="highlight"><pre><span></span><code>    @Override
+    public DeferredSecurityContext loadDeferredContext(HttpServletRequest request) {
+        Supplier&lt;SecurityContext&gt; supplier = () -&gt; getContext(request);
+    //同样是返回SupplierDeferredSecurityContext对象
+        return new SupplierDeferredSecurityContext(supplier, this.securityContextHolderStrategy);
+    }
+
+    private SecurityContext getContext(HttpServletRequest request) {
+    //通过HttpServletRequest的Attribute获取SecurityContext
+    //由于一般情况下没有设定过，因此得到的就是null
+        return (SecurityContext) request.getAttribute(this.requestAttributeName);
+    }
+</code></pre></div>
+<p>最后，两个SecurityContext就会以链式存放在DelegatingDeferredSecurityContext对象中，一并返回了，它的内部长这样：</p>
+<div class="highlight"><pre><span></span><code>static final class DelegatingDeferredSecurityContext implements DeferredSecurityContext {
+
+        private final DeferredSecurityContext previous;
+
+        private final DeferredSecurityContext next;
+
+        DelegatingDeferredSecurityContext(DeferredSecurityContext previous, DeferredSecurityContext next) {
+            this.previous = previous;
+            this.next = next;
+        }
+
+        @Override
+        public SecurityContext get() {
+      //在获取SecurityContext时，会首先从最前面的开始获取
+            SecurityContext securityContext = this.previous.get();
+      //如果最前面的SecurityContext是已登录的，那么直接返回这个SecurityContext
+            if (!this.previous.isGenerated()) {
+                return securityContext;
+            }
+      //否则继续看后面的，也许后面的会有已登录的（实在没有就直接返回一个空的SecurityContext了）
+            return this.next.get();
+        }
+
+        @Override
+        public boolean isGenerated() {
+            return this.previous.isGenerated() &amp;&amp; this.next.isGenerated();
+        }
+}
+</code></pre></div>
+<p>兜了这么大一圈，现在回到一开始的Filter中：</p>
+<div class="highlight"><pre><span></span><code>    private void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+        ...
+    Supplier&lt;SecurityContext&gt; deferredContext = this.securityContextRepository.loadDeferredContext(request);
+    //拿到最终的SecurityContext的Supplier后，继续下面的语句
+        try {
+      //向securityContextHolderStrategy中设置我们上面得到的DeferredSecurityContext
+            this.securityContextHolderStrategy.setDeferredContext(deferredContext);
+      //请求前的任务已完成，继续其他过滤器了
+            chain.doFilter(request, response);
+        }
+        finally {
+      //请求结束后，清理掉securityContextHolderStrategy中的DeferredSecurityContext
+            this.securityContextHolderStrategy.clearContext();
+            request.removeAttribute(FILTER_APPLIED);
+        }
+    }
+</code></pre></div>
+<p>最后我们再来看一下我们之前通过SecurityContextHolder是如何获取到SecurityContext的：</p>
+<div class="highlight"><pre><span></span><code>public class SecurityContextHolder {
+    ...
+  private static String strategyName = System.getProperty(SYSTEM_PROPERTY);
+    private static SecurityContextHolderStrategy strategy;
+    private static int initializeCount = 0;
+
+    static {
+    //类加载时会进行一次初始化
+        initialize();
+    }
+
+    private static void initialize() {
+    //初始化会将对应的SecurityContextHolderStrategy对象给创建
+        initializeStrategy();
+        initializeCount++;
+    }
+
+  //初始化SecurityContextHolderStrategy对象
+    private static void initializeStrategy() {
+        ...
+        // 尝试加载系统配置中设定的Strategy实现类，默认是MODE_THREADLOCAL
+        try {
+            Class&lt;?&gt; clazz = Class.forName(strategyName);
+            Constructor&lt;?&gt; customStrategy = clazz.getConstructor();
+      // 这里直接根据配置中的类名，用反射怒艹一个对象出来
+            strategy = (SecurityContextHolderStrategy) customStrategy.newInstance();
+        }
+        catch (Exception ex) {
+            ReflectionUtils.handleReflectionException(ex);
+        }
+    }
+
+    //清除Context中的内容，实际上就是清理SecurityContextHolderStrategy中的内容
+    public static void clearContext() {
+        strategy.clearContext();
+    }
+
+    //获取SecurityContext对象
+    public static SecurityContext getContext() {
+    //获取SecurityContext实际上也是通过SecurityContextHolderStrategy根据策略来获取
+        return strategy.getContext();
+    }
+
+  ...
+}
+</code></pre></div>
+<p>我们发现，实际上SecurityContextHolder获取SecurityContext对象，就是通过SecurityContextHolderStrategy根据策略来获取，我们直接来看SecurityContextHolderStrategy的实现类：</p>
+<div class="highlight"><pre><span></span><code>final class ThreadLocalSecurityContextHolderStrategy implements SecurityContextHolderStrategy {
+
+  //内部维护一个ThreadLocal对象，按线程存储对应的DeferredSecurityContext
+    private static final ThreadLocal&lt;Supplier&lt;SecurityContext&gt;&gt; contextHolder = new ThreadLocal&lt;&gt;();
+
+    @Override
+    public void clearContext() {
+    //清理实际上是直接清理掉ThreadLocal中存的对象
+        contextHolder.remove();
+    }
+
+    @Override
+    public SecurityContext getContext() {
+    //获取也很简单，直接通过Supplier拿到需要的SecurityContext对象
+        return getDeferredContext().get();
+    }
+
+    @Override
+    public Supplier&lt;SecurityContext&gt; getDeferredContext() {
+        Supplier&lt;SecurityContext&gt; result = contextHolder.get();
+    //如果存储的DeferredSecurityContext为null，这里临时创建一个空的SecurityContext并保存
+        if (result == null) {
+            SecurityContext context = createEmptyContext();
+            result = () -&gt; context;
+            contextHolder.set(result);
+        }
+        return result;
+    }
+
+    ...
+
+}
+</code></pre></div>
+<p>这样，整个流程其实就很清楚了，项目启动时，SecurityContextHolder会自动根据配置创建对应的SecurityContextHolderStrategy对象。当我们的请求到来之后，首先会经过SecurityContextHolderFilter，然后在这个阶段，通过SecurityContextRepository来将不同地方存储（一般是Session中存储）的SecurityContext对象取出并封装为DefferdSecurityContext，然后将其添加到一开始创建好的SecurityContextHolderStrategy对象中，这样，我们的Controller在处理时就能直接从SecurityContextHolder取出SecurityContext对象了，最后在处理结束返回响应时，SecurityContextHolderFilter也会将SecurityContextHolderStrategy存储的DefferdSecurityContext清除掉，至此，一个完整流程结束。</p>
+<hr />
+<h2 id="_19">实战：图书管理系统</h2>
+<p>在了解了SpringSecurity的大部分功能后，我们就来将整个网站的内容进行完善，登陆目前已经实现了，我们还需要实现以下功能：</p>
+<ul>
+<li>注册功能（仅针对于学生）</li>
+<li>角色分为同学和管理员<ul>
+<li>管理员负责上架、删除、更新书籍，查看所有同学的借阅列表</li>
+<li>同学可以借阅和归还书籍，以及查看自己的借阅列表</li>
+</ul>
+</li>
+</ul>
+<p>现在我们就来从头编写一个基于SSM的图书管理系统吧！</p>
+
+
+
+
+
+
+
+
+
+
+
+<div id="__comments">
+
+
+
+<h3>颜色主题调整</h3>
+
+<div class="tx-switch">
+<button data-md-color-scheme="default"><code>default</code></button>
+<button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+        var attr = this.getAttribute("data-md-color-scheme")
+        document.body.setAttribute("data-md-color-scheme", attr)
+        localStorage.setItem("data-md-color-scheme",attr);
+        updateScheme();
+        })
+})
+</script>
+
+<div class="tx-switch">
+<button class="button1" data-md-color-primary="red" style="background-color:red">red</button>
+<button class="button1" data-md-color-primary="pink" style="background-color:pink;color:black">pink</button>
+<button class="button1" data-md-color-primary="purple" style="background-color:purple">purple</button>
+<button class="button1" data-md-color-primary="indigo" style="background-color:indigo">indigo</button>
+<button class="button1" data-md-color-primary="blue" style="background-color:blue">blue</button>
+<button class="button1" data-md-color-primary="cyan" style="background-color:cyan;color:black">cyan</button>
+<button class="button1" data-md-color-primary="teal" style="background-color:teal">teal</button>
+<button class="button1" data-md-color-primary="green" style="background-color:green">green</button>
+<button class="button1" data-md-color-primary="lime" style="background-color:lime;color:black">lime</button>
+<button class="button1" data-md-color-primary="orange" style="background-color:orange;color:black">orange</button>
+<button class="button1" data-md-color-primary="brown" style="background-color:brown;border-radius:3px">brown</button>
+<button class="button1" data-md-color-primary="grey" style="background-color:grey">grey</button>
+<button class="button1" data-md-color-primary="black" style="background-color:black">black</button>
+<button class="button1" data-md-color-primary="white" style="background-color:white;color:black">white</button>
+</div>
+
+<script>
+var buttons = document.querySelectorAll("button[data-md-color-primary]")
+buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+        var attr = this.getAttribute("data-md-color-primary")
+        document.body.setAttribute("data-md-color-primary", attr)
+        localStorage.setItem("data-md-color-primary",attr);
+        })
+})
+</script>
+
+<h2 ><!-- 评论 -->评论区~</h2>
+
+
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="trace1729/NCU-CS-BaoYan"
+        data-repo-id="R_kgDOJ_FoOw"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOJ_FoO84CYMDD"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2021010071号-1</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

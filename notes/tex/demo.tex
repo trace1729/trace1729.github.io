@@ -1,0 +1,84 @@
+%! Tex program = xelatex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\UseRawInputEncoding
+\usepackage{fancyhdr}  % 更改页眉
+\usepackage{graphicx, subfig} % insert picture
+\usepackage{color} % 改字体颜色
+\usepackage{xcolor}  %改公式颜色
+\usepackage{cancel}  % 约分线
+\usepackage[UTF8]{ctex}
+\begin{document}
+
+% beg
+\begin{displaymath}
+    \int_{0}^{1} \ln x \mathrm{d}x
+\end{displaymath}
+
+% cnt
+\begin{center}
+    This is center text
+\end{center}
+
+% desc
+
+\begin{description}
+    \item[1] 第一选择
+    \item[2] second description
+    \item[3] third description
+    \item[4] final description
+\end{description}
+
+%enum
+list
+\begin{enumerate}
+    \item aas
+    \item aas
+    \item aas
+    \item aas
+    \item aas
+    \item super
+
+\end{enumerate}
+
+$$ % condition
+f(n) = \begin{cases}
+  n/2  & n \text{ is even} \\
+  3n+1 & n \text{ is odd}
+\end{cases}
+
+
+$$
+
+%cases
+%\begin{cases}
+    %x& = 1  \\
+    %2& = 2 \\
+    %3& = 3
+%\end{cases}
+
+
+\begin{displaymath}
+   cc =  \subset \quad
+   inn = \in \quad
+   Nn = \cap \quad
+   UU = \cup \quad
+   uuu = \bigcup_{i \in  I} \quad
+\end{displaymath}
+
+% dm
+
+
+\begin{displaymath}
+    HH = \mathbb{H}
+    DD = \mathbb{D}
+\end{displaymath}
+
+\sum_{n=1}^{\infty} \frac{1}{n}
+
+$\overset{\text{This is some text  as}}{\to}$
+$\overset{*}{\to}$
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgf}
+\usetikzlibrary{automata}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+
+\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=4cm,
+semithick]
+\tikzstyle{every state}=[fill=white,draw=black,text=black]
+
+\node[state] (S) {S};
+\node[state] (ID) [right of=S] {ID};
+\node[state] (DINT) [below of=ID] {DINT};
+\node[state] (DFLOAT) [below of=DINT] {DFLOAT};
+\node[state] (DOCT) [below of=DFLOAT] {DOCT};
+\node[state] (DHEX) [below of=DOCT] {DHEX};
+\node[state] (OP) [left of=S] {OP};
+\node[state] (KEYWORD) [below of=OP] {KEYWORD};
+
+\path (S) edge node {LETTER | \_ } (ID)
+(ID) edge node {LETTER | DIGIT | \_ } (ID)
+(S) edge [bend left] node {DIGIT} (DINT)
+(DINT) edge node {DIGIT} (DINT)
+(S) edge [bend left] node {0} (DOCT)
+(DOCT) edge node {DIGIT} (DOCT)
+(S) edge [bend left] node {0x} (DHEX)
+(DHEX) edge node {HEXDIGIT} (DHEX)
+(S) edge [bend left] node {+ | - | * | / | > | < | = | ( | ) | ;} (OP)
+(S) edge [bend left] node {if | then | else | while | do} (KEYWORD);
+\end{tikzpicture}
+
+\end{document}

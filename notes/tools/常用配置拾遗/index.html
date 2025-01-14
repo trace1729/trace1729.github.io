@@ -1,0 +1,3926 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../outline/">
+      
+      
+        <link rel="next" href="../sysadmin/lab1/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>常用配置拾遗 - blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/status.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="blog" class="md-header__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              常用配置拾遗
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/trace1729/trace1729.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        
+  
+    
+  
+  写作指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../archive/cs61c-intro-risc/" class="md-tabs__link">
+          
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../PA2%20summery/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="blog" class="md-nav__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/trace1729/trace1729.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写作指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/cs61c-intro-risc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS61C 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/math-equation-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    math_equation_test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/%E8%80%83%E7%A0%94/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    考研
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PA2%20summery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ee219/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EE219 project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../org-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of Contents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verilog_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字电路实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    15445 Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            15445 Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15445%20Database/p0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6.s081 OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.s081 OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/interview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The starting process of xv6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab5%28cow%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab5(cow)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab6%28scheduling%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab6(scheduling)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/lab9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.s081%20OS/summery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.s081 总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Algo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    算法笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/Room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/cornell_lec03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cornell lec03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/coroutine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coroutine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/dataStore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dataStore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/kotlin_syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kotlin syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/material_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/navigation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/viewModel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    viewModel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/%E7%88%AC%E8%99%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    爬虫分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    需求文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CS106L cpp 
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            CS106L cpp 
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/cpp%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cpp笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/operator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L%20cpp%20/template_function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            DL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深度学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深度学习论文笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java Spring
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Java Spring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java%20Spring/Java%20SSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java SSM笔记（一）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java%20Spring/Java%20SSM%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL高级
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java%20Spring/SSM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java%20Spring/Spring%20MVC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring MVC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java%20Spring/Spring%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Manjaro%2BWindows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manjaro+Windows 双系统安装教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分享会
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    常用配置拾遗
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    常用配置拾遗
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      neovim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="neovim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neovim_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 neovim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      neovim 自动补全
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="neovim 自动补全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动补全触发的逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      为snippets增加数学环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snippets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      snippets 的组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 lsp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 lsp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c / c++
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      rust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    <span class="md-ellipsis">
+      go
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haskell" class="md-nav__link">
+    <span class="md-ellipsis">
+      haskell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      kotlin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    <span class="md-ellipsis">
+      php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      lua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      latex
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      git 代理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 Android Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 Android Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 maven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 vscode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 vscode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vscode-configration" class="md-nav__link">
+    <span class="md-ellipsis">
+      vscode configration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ideavim" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 ideavim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 ideavim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideavimrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ideavimrc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      不常用命令行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="不常用命令行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      pandoc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger" class="md-nav__link">
+    <span class="md-ellipsis">
+      ranger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      rclone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    <span class="md-ellipsis">
+      pacman
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      zellij
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      gdb
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manjaro-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manjaro cheatsheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manjaro cheatsheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      卸载软件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetoothctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      bluetoothctl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      通知
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器配置拾遗
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务器配置拾遗">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-deploy-website-using-apacha2" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to deploy website using Apacha2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      定时任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件描述符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-server-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloud server + hexo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      涂鸦区
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_4" id="__nav_4_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sysadmin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sysadmin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab4%28systemd%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab5%28network%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab6%28network%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network 进阶版 (包含 nginx)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab7%28encrypt%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encrypt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/lab9%28docker%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_5" id="__nav_4_12_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实用网站
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            实用网站
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99/%E5%85%AC%E5%BC%80%E8%AF%BE%E7%BD%91%E7%AB%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    公开课网站
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    一生一芯
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            一生一芯
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%80%E7%94%9F%E4%B8%80%E8%8A%AF/PA1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PA1 复盘
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      neovim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="neovim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neovim_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 neovim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      neovim 自动补全
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="neovim 自动补全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动补全触发的逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      为snippets增加数学环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snippets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      snippets 的组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 lsp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 lsp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c / c++
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      rust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    <span class="md-ellipsis">
+      go
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haskell" class="md-nav__link">
+    <span class="md-ellipsis">
+      haskell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      kotlin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    <span class="md-ellipsis">
+      php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      lua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      latex
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      git 代理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 Android Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 Android Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 maven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 vscode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 vscode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vscode-configration" class="md-nav__link">
+    <span class="md-ellipsis">
+      vscode configration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ideavim" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 ideavim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 ideavim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideavimrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ideavimrc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      不常用命令行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="不常用命令行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      pandoc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger" class="md-nav__link">
+    <span class="md-ellipsis">
+      ranger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      rclone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    <span class="md-ellipsis">
+      pacman
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      zellij
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      gdb
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manjaro-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manjaro cheatsheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manjaro cheatsheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      卸载软件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetoothctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      bluetoothctl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      通知
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器配置拾遗
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务器配置拾遗">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-deploy-website-using-apacha2" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to deploy website using Apacha2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      定时任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件描述符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-server-hexo" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloud server + hexo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      涂鸦区
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>${toc}</p>
+<h1 id="_1">常见配置拾遗</h1>
+<h2 id="neovim">neovim</h2>
+<h3 id="neovim_1">安装 neovim</h3>
+<p>for ubuntu</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>software-properties-common<span class="w"> </span>-y
+sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:neovim-ppa/stable<span class="w"> </span>-
+sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:neovim-ppa/unstable<span class="w"> </span>-y
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>neovim<span class="w"> </span>-y
+</code></pre></div>
+<h3 id="neovim_2">neovim 自动补全</h3>
+<h4 id="_2">自动补全触发的逻辑</h4>
+<p>首先在coc中，推荐的配置是用 tab 选择补全，用cr or <c-space>确认选择
+也可以配置成使用方向键选择补全，用tab进行确认，跳转</p>
+<p>而由于在 utilsnippets 中 用于触发补全的键是 tab, 和coc的快捷键冲突了
+所以tab切换无效，我们可以在 vimrc 中将 util snippets 的触发改成c-e
+这样大家就不互相干扰，各玩各的。</p>
+<h4 id="snippets">为snippets增加数学环境</h4>
+<p>在snippets文件 最开始的地方加上</p>
+<div class="highlight"><pre><span></span><code><span class="k">global</span> <span class="err">!</span><span class="n">p</span>
+<span class="k">def</span> <span class="nf">math</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">vim</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;vimtex#syntax#in_mathzone()&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span>
+
+<span class="k">def</span> <span class="nf">comment</span><span class="p">():</span> 
+    <span class="k">return</span> <span class="n">vim</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;vimtex#syntax#in_comment()&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span>
+
+<span class="k">def</span> <span class="nf">env</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">vim</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;vimtex#env#is_inside(&#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&#39;)&quot;</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;0&#39;</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;0&#39;</span>
+<span class="n">endglobal</span>
+</code></pre></div>
+<h4 id="snippets_1">snippets 的组成</h4>
+<p><a href="https://castel.dev/post/lecture-notes-1/#using-ultisnips-to-create-snippets">tutorial</a> </p>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w</td>
+<td>expand on word boundaries</td>
+</tr>
+<tr>
+<td>A</td>
+<td>automaticaly expanding</td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;++&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>再给属于 数学环境下的snippets 头上加
+context “math()”</p>
+<h3 id="lsp">配置 lsp</h3>
+<p><a href="https://github.com/neoclide/coc.nvim/wiki/Language-servers#go">coc-nvim-lsp</a> </p>
+<h4 id="c-c">c / c++</h4>
+<ul>
+<li>install clangd <code>sudo apt install clangd</code>
+    Then</li>
+<li>add <code>coc-clangd</code>
+    or</li>
+<li>config language server in cocconfig.json</li>
+</ul>
+<h4 id="java">java</h4>
+<ul>
+<li>add <code>coc-java</code> in <code>g:coc\_global\_extensions</code> list</li>
+<li>install open-jdk (version &gt;= 17)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>apt-cache<span class="w"> </span>search<span class="w"> </span>openjdk<span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span><span class="s1">&#39;11|17|18&#39;</span>
+<span class="w"> </span>apt<span class="w"> </span>update
+<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jdk
+</code></pre></div>
+<h4 id="rust">rust</h4>
+<p><code>cargo</code></p>
+<p>very simple</p>
+<ul>
+<li>install rust itself <a href="https://www.rust-lang.org/tools/install">website</a>
+    <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+<li>add <code>coc-rust-analyzer</code> in <code>g:coc\_global\_extensions</code> list</li>
+<li>some tutorial
+<a href="https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html">offical tutorial</a> </li>
+</ul>
+<h4 id="go">go</h4>
+<ul>
+<li>install go itself <a href="https://go.dev/learn/">website</a></li>
+<li>install gopls<ol>
+<li>export GO111MODULE=on</li>
+<li>go env -w GOPROXY=https://goproxy.cn,direct 切换为国内代理</li>
+<li>go install golang.org/x/tools/gopls@latest 下载 gopls</li>
+<li>set up languageserver in cocConfig, remember write absolute path for gopls</li>
+</ol>
+</li>
+<li>begin writing code</li>
+</ul>
+<div class="highlight"><pre><span></span><code>go<span class="w"> </span>mod<span class="w"> </span>init<span class="w"> </span>example/hello
+<span class="nb">cd</span><span class="w"> </span>example/hello
+touch<span class="w"> </span>hello.go
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>some tutorial
+<a href="https://go.dev/doc/tutorial/getting-started">offical</a> </li>
+</ul>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/local/go<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local<span class="w"> </span>-xzf<span class="w"> </span>go1.19.4.linux-amd64.tar.gz
+</code></pre></div>
+<ul>
+<li>add <code>coc-rust-analyzer</code> in <code>g:coc\_global\_extensions</code> list</li>
+</ul>
+<h4 id="haskell">haskell</h4>
+<ul>
+<li>first install ghcup, <a href="https://www.haskell.org/ghcup/install/">website</a><blockquote>
+<p>after installing, may need to add ghcup to your environment variable. <code>export PATH=$PATH: ...</code></p>
+</blockquote>
+</li>
+<li>using ghcup to install hls, <a href="https://haskell-language-server.readthedocs.io/en/latest/installation.html">website</a></li>
+<li>Then add configrations in cocConfig.json</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;haskell&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;haskell-language-server-wrapper&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--lsp&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;rootPatterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*.cabal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cabal.project&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hie.yaml&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;filetypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;haskell&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lhaskell&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="c1">// Settings are optional, here are some example values</span>
+<span class="w">            </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;haskell&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;checkParents&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CheckOnSave&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;checkProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;maxCompletions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;formattingProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ormolu&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;stan&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;globalOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+</code></pre></div>
+<ul>
+<li>some tutorial
+<a href="https://www.w3cschool.cn/hsriti/xmqj1ozt.html">ws3 school</a> 
+<a href="https://www.haskellfromtheverybeginning.com/">offical tutorial</a> </li>
+</ul>
+<h4 id="kotlin">kotlin</h4>
+<ol>
+<li>download kotlin lsp at <a href="https://github.com/fwcd/kotlin-language-server/releases">github</a> </li>
+<li>add configrations
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;languageserver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;kotlin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/lsp/kotlin/server/bin/kotlin-language-server&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;filetypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;kotlin&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>install kotlin via sdk</p>
+</li>
+<li>
+<p>下载 <code>kotlin</code>
+<a href="https://www.cyberciti.biz/faq/how-to-install-kotlin-programming-language-on-ubuntudebian-linux/">tutorial</a> </p>
+<blockquote>
+<p>注意使用 <code>curl -s "https://get.sdkman.io" | bash</code> 安装 <code>sdkman</code>
+<a href="https://www.helloworld.net/p/5172064416">sdkman usage</a> </p>
+</blockquote>
+</li>
+<li>
+<p>如果下载速度太慢，可以前往 <a href="https://kotlinlang.org/docs/command-line.html#manual-install">kotlin</a> 
+下载二进制安装包，解压到任意位置，再将 解压后根目录中 <code>bin</code> 文件夹 添加到环境变量</p>
+<blockquote>
+<p>解压 .tar.gz 文件 用  tar -xzf 命令</p>
+</blockquote>
+</li>
+<li>
+<p>need install gradle (can not directly use kotlinc)</p>
+<blockquote>
+<p>using gradle to build project and run project</p>
+</blockquote>
+</li>
+</ol>
+<p>see this link <a href="https://alpha2phi.medium.com/neovim-for-beginners-kotlin-1854312f51c">Neovim for beginners</a> </p>
+<h4 id="php">php</h4>
+<ul>
+<li><code>coc-phpls</code></li>
+</ul>
+<p><a href="https://github.com/enflow/wsl2-php-development">web development in wsl2</a> </p>
+<h4 id="lua">lua</h4>
+<p>how to install lua and luarock
+1. follow the offical doc 
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-R<span class="w"> </span>-O<span class="w"> </span>http://www.lua.org/ftp/lua-5.4.4.tar.gz
+tar<span class="w"> </span>zxf<span class="w"> </span>lua-5.4.4.tar.gz
+<span class="nb">cd</span><span class="w"> </span>lua-5.4.4
+make<span class="w"> </span>all<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+2. configure the environment variable
+3. run <code>make local</code>, and copy everything in <code>install</code> directories to  /usr/local/bin/lua-5.4</p>
+<h4 id="python">python</h4>
+<p>meet with <a href="https://github.com/fannheyward/coc-pyright/issues/600">issue 600</a> 
+fixed by deleting coc-python in directory</p>
+<h4 id="latex">latex</h4>
+<p>installing <code>texlive</code> </p>
+<div class="highlight"><pre><span></span><code>sudo pacman -S texlive texlive-langchinese
+</code></pre></div>
+<p>或者
+可参考 <a href="https://zhuanlan.zhihu.com/p/111889252">Linux 下的LaTex写作工具链</a>
+Makefiles</p>
+<div class="highlight"><pre><span></span><code><span class="nv">LATEX</span><span class="o">=</span>xelatex<span class="w"> </span><span class="c1">#定义变量，指定编译引擎</span>
+<span class="nv">LATEXOPT</span><span class="o">=</span>--shell-escape<span class="w"> </span><span class="c1">#定义变量 指定编译参数</span>
+<span class="nv">NONSTOP</span><span class="o">=</span>--interaction<span class="o">=</span>nonstopmode<span class="w"> </span><span class="c1">#定义变量 指定编译模式</span>
+<span class="nv">LATEXMK</span><span class="o">=</span>latexmk<span class="w"> </span><span class="c1">#采用latexmk来编译latex文档</span>
+<span class="nv">LATEXMKOPT</span><span class="o">=</span>-pdf<span class="w"> </span><span class="c1">#latexmk参数 输出pdf</span>
+<span class="nv">CONTINUOUS</span><span class="o">=</span>-pvc<span class="w"> </span><span class="c1">#若加入-pvc选项则可以持续检测文件改动并实时显示</span>
+<span class="nv">MAIN</span><span class="o">=</span>main<span class="w"> </span><span class="c1">#根文件名称</span>
+
+<span class="nv">MAIN_SRC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span>%,<span class="w"> </span>%.tex,<span class="w"> </span><span class="k">$(</span>MAIN<span class="k">))</span>
+
+<span class="nv">SOURCES</span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>MAIN_SRC<span class="k">)</span><span class="w">  </span>
+<span class="nv">FIGURES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>find<span class="w"> </span>figures/*<span class="w"> </span>movies/*<span class="w"> </span>-type<span class="w"> </span>f<span class="k">)</span>
+
+<span class="nf">all</span><span class="o">:</span><span class="w">    </span><span class="k">$(</span><span class="nv">MAIN</span><span class="k">)</span>.<span class="n">pdf</span>
+
+<span class="nf">$(MAIN).pdf</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SOURCES</span><span class="k">)</span> <span class="k">$(</span><span class="nv">FIGURES</span><span class="k">)</span>
+<span class="w">    </span><span class="k">$(</span>LATEXMK<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LATEXMKOPT<span class="k">)</span><span class="w">  </span><span class="se">\</span>
+<span class="w">            </span>-pdflatex<span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LATEX<span class="k">)</span><span class="s2"> </span><span class="k">$(</span>LATEXOPT<span class="k">)</span><span class="s2"> </span><span class="k">$(</span>NONSTOP<span class="k">)</span><span class="s2"> %O %S&quot;</span><span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>
+<span class="nf">force</span><span class="o">:</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>.pdf
+<span class="w">    </span><span class="k">$(</span>LATEXMK<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LATEXMKOPT<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CONTINUOUS<span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>-pdflatex<span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LATEX<span class="k">)</span><span class="s2"> </span><span class="k">$(</span>LATEXOPT<span class="k">)</span><span class="s2"> %O %S&quot;</span><span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>
+<span class="nf">clean</span><span class="o">:</span>
+<span class="w">    </span><span class="k">$(</span>LATEXMK<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>
+<span class="w">    </span>-rm<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>.pdfsync
+<span class="w">    </span>-rm<span class="w"> </span>-rf<span class="w"> </span>*~<span class="w"> </span>*.tmp
+<span class="w">    </span>-rm<span class="w"> </span>-f<span class="w"> </span>*.bbl<span class="w"> </span>*.blg<span class="w"> </span>*.aux<span class="w"> </span>*.end<span class="w"> </span>*.fls<span class="w"> </span>*.log<span class="w"> </span>*.out<span class="w"> </span>*.fdb_latexmk
+<span class="nf">once</span><span class="o">:</span>
+<span class="w">    </span><span class="k">$(</span>LATEXMK<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LATEXMKOPT<span class="k">)</span><span class="w"> </span>-pdflatex<span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LATEX<span class="k">)</span><span class="s2"> </span><span class="k">$(</span>LATEXOPT<span class="k">)</span><span class="s2"> %O %S&quot;</span><span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>
+<span class="nf">debug</span><span class="o">:</span>
+<span class="w">    </span><span class="k">$(</span>LATEX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LATEXOPT<span class="k">)</span><span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>
+<span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span> <span class="n">force</span> <span class="n">once</span> <span class="n">all</span>
+</code></pre></div>
+<ul>
+<li>download and build <code>texlab</code> </li>
+<li>config settings</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;texlab.path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$HOME/notes/tex/texlab/target/release/texlab&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;texlab.build.onSave&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;texlab.build.args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-xelatex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-interaction=nonstopmode&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-synctex=1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;%f&quot;</span><span class="p">],</span>
+</code></pre></div>
+<h2 id="git">git 代理</h2>
+<ul>
+<li>根据这篇博客，配置了github的代理。<a href="https://ericclose.github.io/git-proxy-config.html">git 代理</a> </li>
+<li>如果遇到了从github拉取失败的情况，要么是没开clash 代理，要么是节点废了</li>
+<li>有时候通过 ssh 的方式 clone 仓库也会失败，这个时候需要配置 ssh 走 http 的代理</li>
+<li>设置 ssh 走 http 代理 <a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding">doc</a></li>
+</ul>
+<h2 id="android-studio">配置 Android Studio</h2>
+<h3 id="maven">配置 maven</h3>
+<ol>
+<li>In IDEA find settings-&gt;build-&gt;Maven change <code>User settings file</code>, and <code>Local Repository</code> </li>
+<li>In the location of <code>user settings file</code>,touch a settings json, which Maven will read before execution</li>
+<li>In <code>settings.json</code>, add <code>local repository</code> and <code>mirror</code> .
+<a href="C:\Users\1729.m2\settings.xml">settings</a> <blockquote>
+<p>~/.m_2/settings.xml is user config file
+../conf/settings.xml is system config file 
+The priority of user file weights than system configration file.</p>
+</blockquote>
+</li>
+</ol>
+<p>if you are not sure what script is being executed, you can somehow random change the contents 
+see whether the change affect idea</p>
+<ul>
+<li>for maven or some thing related to java, go to bilibli channel to see tutorial.</li>
+<li>intelliJ offical doc is also a great reference</li>
+</ul>
+<h3 id="gradle">配置 gradle</h3>
+<ul>
+<li>To modify gradle location permanently,
+Add a environment variable <code>GRADLE_USER_HOME</code>, 
+and set its value as your self defined location. 
+for example <code>D:\.gradle</code></li>
+<li>To move location of avd.
+go <code>~/.android/avd</code>, modify <code>XXX.ini</code> file</li>
+</ul>
+<div class="highlight"><pre><span></span><code>avd.ini.encoding=UTF-8
+path=D:\avd\Pixel_XL_API_33_2.avd // change this to your desired location
+path.rel=avd\Pixel_XL_API_33_2.avd
+target=android-33
+</code></pre></div>
+<h2 id="vscode">配置 vscode</h2>
+<h3 id="vscode-configration">vscode configration</h3>
+<ul>
+<li><code>which-key</code> could specify function of same key-bindings for different circustances</li>
+<li><code>multi-command</code></li>
+<li>find the api for spercific action in vscode <a href="https://vscode-docs.readthedocs.io/en/stable/editor/tasks/">docs </a> </li>
+</ul>
+<p><a href="https://github.com/ravenxrz/dotfiles/tree/master/nvim">reference dotfiles</a> 
+<a href="https://blog.csdn.net/qq_45859188/article/details/124529266">tasks</a> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;terminal.integrated.fontFamily&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;NotoSansMono Nerd Font&quot;</span><span class="w">     </span>
+<span class="c1">// amazing</span>
+<span class="nt">&quot;keyboard.dispatch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keyCode&quot;</span><span class="w">  </span>
+<span class="c1">// keyboard</span>
+<span class="c1">// Place your key bindings in this file to override the defaults</span>
+<span class="p">[</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+alt+t&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1">// you could use     &quot;key&quot;: &quot;ctrl+`&quot;,  if you wish</span>
+<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;workbench.action.closePanel&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// &quot;when&quot;: &quot;terminalFocus&quot;</span>
+<span class="p">},</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+alt+t&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;workbench.action.toggleMaximizedPanel&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!terminalFocus&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+shift+alt+z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;workbench.action.tasks.runTask&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="w">     </span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selectNextSuggestion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;editorTextFocus &amp;&amp; suggestWidgetMultipleSuggestions &amp;&amp; suggestWidgetVisible&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="w">                   </span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-acceptSelectedSuggestion&quot;</span>
+<span class="p">},</span>
+<span class="p">]</span>
+</code></pre></div>
+<p><strong>vscode cpp 调试</strong> </p>
+<ol>
+<li>从 官网 拷贝 task.json, launch.json</li>
+<li>选择 debug cpp/c 文件时，记得不要选 带有 <code>/usr/bin/cpp</code> 那个任务</li>
+</ol>
+<p><img alt="cpp" src="img/cpp.png" /></p>
+<ol>
+<li>之后就可以了</li>
+</ol>
+<h2 id="ideavim">配置 ideavim</h2>
+<h3 id="ideavimrc">ideavimrc</h3>
+<ul>
+<li>how to use which key</li>
+<li>how to find the task id<ul>
+<li>first, <code>shift</code> <code>shift</code> and search <code>track action ID</code> </li>
+<li>perform and copy the action</li>
+<li>write mappings <code>map keyMappings &lt;Action&gt;({action_id})</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">不常用命令行</h2>
+<h3 id="git_1">git</h3>
+<p>git stash pop 可以撤销git stash 操作并删除stash的记录</p>
+<h3 id="pandoc">pandoc</h3>
+<p><code>!pandoc % -o %&lt;.pdf --pdf-engine=xelatex -V CJKmainfont=KaiTi</code> </p>
+<p><span class="arithmatex">\(a_1 + b_2 = c_3\)</span> </p>
+<h3 id="ranger">ranger</h3>
+<ul>
+<li>need syntax highlighting</li>
+<li>open pdf document for the first time is extremely slow</li>
+</ul>
+<h3 id="wget">wget</h3>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>--mirror<span class="w"> </span>--convert-links<span class="w"> </span>--adjust-extension<span class="w"> </span>--page-requisites<span class="w"> </span>--no-parent<span class="w"> </span>https://www.eecs189.org/sp18/
+</code></pre></div>
+<h3 id="rclone">rclone</h3>
+<div class="highlight"><pre><span></span><code>rclone<span class="w"> </span>mount<span class="w"> </span>oss:trace1729<span class="w"> </span>/home/trace/rclone<span class="w">  </span>--copy-links<span class="w"> </span>--no-gzip-encoding<span class="w"> </span>--no-check-certificate<span class="w"> </span>--allow-other<span class="w"> </span>--allow-non-empty<span class="w"> </span>--umask<span class="w"> </span><span class="m">000</span><span class="w"> </span>--daemon
+</code></pre></div>
+<h3 id="pacman">pacman</h3>
+<ol>
+<li><code>pacman -Ss {{package}}</code> s for search.</li>
+<li><code>pacman -Sc</code> clear cache </li>
+<li><code>pacman -Scc</code> clear all cache</li>
+<li><code>pacman -Rc {{package}}</code> remove package</li>
+<li><code>pacman -Rs</code> remove package and its dependency </li>
+<li><code>pacman -Rns</code> remove package, its dependency and its <strong>global</strong> configration file</li>
+<li><code>pacman -Qe</code> search user installed package</li>
+<li><code>pacman -R $(pacman -Qdtq)</code> </li>
+</ol>
+<p>当太久没更新</p>
+<p>pacman-key --populate archlinux</p>
+<p>pacman -S archlinux-keyring</p>
+<p>更新出现报错 </p>
+<blockquote>
+<p>"Failed to commit transaction (conflicting files)" error</p>
+</blockquote>
+<p>首先去 arch wiki 上找 pacman 的 trouble shooting.</p>
+<p>使用 <code>pacman -Qo</code> 确定冲突的文件不是其他包的依赖后，可以将冲突文件重命名或者删除，再尝试更新</p>
+<h3 id="zellij">zellij</h3>
+<ol>
+<li>配置文件 <code>~/.config/zellij</code> </li>
+<li>布局文件 <code>~/.config/zellij/layouts</code> </li>
+<li>加载布局 <code>zellij --layout {写文件名就好}</code> </li>
+</ol>
+<p>布局介绍
+- tab 是一个满屏
+ - 一个 tab 下 可以有 多个 pane</p>
+<p>参考配置</p>
+<div class="highlight"><pre><span></span><code>layout {
+    pane split_direction=&quot;vertical&quot; {
+                    pane
+                    pane
+            }
+}
+</code></pre></div>
+<h2 id="gdb">gdb</h2>
+<ol>
+<li><code>.gdbinit</code> 可以预设一些gdb 命令 方便调试 </li>
+<li>需要在 <code>~/.config/gdb/gdbinit</code> 里添加安全路径，<code>.gdbinit</code> 才能被执行  </li>
+</ol>
+<div class="highlight"><pre><span></span><code>add-auto-load-safe-path<span class="w"> </span>/home/trace/trace/learning/open_course/6.s081/xv6-labs-2021/.gdbinit
+add-auto-load-safe-path<span class="w"> </span>/home/trace/trace/learning/cpp/.gdbinit
+</code></pre></div>
+<ol>
+<li>如果 gdb 打印 异常</li>
+</ol>
+<div class="highlight"><pre><span></span><code>(gdb) p intervals[0][0]
+$2 = (__gnu_cxx::__alloc_traits&lt;std::allocator&lt;int&gt;, int&gt;::value_type &amp;) @0x555555
+572000: 15
+</code></pre></div>
+<p>可能是因为设置了 <code>set auto-load safe-path XXX</code></p>
+<h2 id="manjaro-cheatsheet">Manjaro cheatsheet</h2>
+<ul>
+<li>How to installing fonts for manjaro</li>
+<li>downloading <code>ttf</code> file</li>
+<li>create directory for your font in <code>/usr/share/fonts</code> </li>
+<li>move your <code>ttf</code> file into the directory you just created</li>
+<li>
+<p>Done!</p>
+</li>
+<li>
+<p>注意 使用 <code>yay</code> 时，需要开代理，而日终端默认是不走代理的，需要手动运行</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">https_proxt</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
+<ul>
+<li>i3wm 使用 </li>
+<li><code>font:pango {{fontsize}}</code> </li>
+<li>需要在使用代理的终端下，开启浏览器，才能走代理</li>
+<li><code>./clash-linux-amd64-v3-v1.11.4 -f config.yml &gt;/dev/null 2&gt;&amp;
+1 &amp;</code> </li>
+<li>
+<p><code>source proxy.sh</code> </p>
+</li>
+<li>
+<p>关闭代理 </p>
+</li>
+<li><code>ps aux | grep clash</code> </li>
+<li><code>kill -9</code> </li>
+<li>
+<p><code>source noproxy.sh</code> </p>
+</li>
+<li>
+<p>键位绑定</p>
+</li>
+<li><code>xev</code> show ascii code for keystroke</li>
+<li>
+<p>capslock: 66, esc: 9</p>
+</li>
+<li>
+<p>待折腾</p>
+</li>
+<li>
+<p>调整标签页的大小</p>
+</li>
+<li>
+<p>When using <code>fanyi</code> command line tools</p>
+</li>
+<li>either using <code>-S</code> option to close voice</li>
+<li>or you install relavent package <code>pacman -S festival festival-englist</code> </li>
+</ul>
+<p><strong>npm</strong>
+- 淘宝镜像https 证书过期了，而有些项目构建时，又指定
+了淘宝镜像，导致构建失败。目前没找到解决办法
+    - 也许可以手动安装，但是不想折腾了。</p>
+<h3 id="_4">卸载软件</h3>
+<ul>
+<li>使用 pacman 卸载软件后，可能会有残留文件，一般检查一下几个文件位置<ul>
+<li><code>~/.config/</code></li>
+<li><code>~/</code></li>
+<li><code>/usr/share/</code></li>
+<li><code>~/cache/</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="bluetoothctl">bluetoothctl</h3>
+<p>首先启动服务</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>bluetoothctl.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>bluetoothctl.service
+</code></pre></div>
+<p>再输入 <code>bluetoothctl</code> 进入命令行界面</p>
+<div class="highlight"><pre><span></span><code>bluetoothctl<span class="w"> </span><span class="c1">#连接交互命令</span>
+power<span class="w"> </span>on<span class="w"> </span><span class="c1">#开启控制器电源，默认关闭</span>
+devices<span class="w"> </span><span class="c1">#获取要配对设备的MAC</span>
+agent<span class="w"> </span>on<span class="w"> </span><span class="c1">#打开代理</span>
+pair<span class="w"> </span>MAC_ADDRESS<span class="w"> </span><span class="c1">#配对，输入MAC地址即可配对，建议使用Tab</span>
+connect<span class="w"> </span>MAC_ADDRESS<span class="w"> </span><span class="c1">#连接，建议使用Tab</span>
+</code></pre></div>
+<p>如果输入 <code>power on</code> 后，出现 <code>Failed to set power on: org.bluez.Error.Failed</code> 错误,
+返回终端输入 <code>rfkill unblock bluetooth</code>，再进入到 <code>bluetoothctl</code> 界面重新输入 <code>power on</code> </p>
+<h3 id="_5">通知</h3>
+<p>如果qq不现实消息通知，可能是因为你开了 <code>Do not Disturb</code> 模式</p>
+<h2 id="_6">服务器配置拾遗</h2>
+<h3 id="how-to-deploy-website-using-apacha2">How to deploy website using Apacha2</h3>
+<ol>
+<li>
+<p>install <code>apache</code> 
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2
+</code></pre></div></p>
+</li>
+<li>
+<p>config ufw (ubuntu firewall)</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>OpenSSH<span class="w"> </span><span class="c1"># for ssh into server </span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span><span class="w"> </span><span class="c1"># 为 apache 服务 放行</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="c1"># 启用防火墙</span>
+</code></pre></div>
+3. 启动 apache 服务</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+</code></pre></div>
+<ol>
+<li>installing php, <code>php plugin for apache</code>, mysql, <code>sql plugin for php</code></li>
+</ol>
+<p><code>sudo apt install php libapache-mod-php mysql-server php-mysql</code> </p>
+<ol>
+<li>
+<p>the root dir is located at <code>/var/www/html</code>, You can modify the content in index.html</p>
+</li>
+<li>
+<p>mysql 服务</p>
+<blockquote>
+<p>After installing mysql service automaticaly activatied</p>
+</blockquote>
+</li>
+</ol>
+<p>First we need to config password for root <code>Alter ...</code> </p>
+<p>Then run <code>mysql_secure_installation</code> </p>
+<h3 id="_7">定时任务</h3>
+<p>0 22 * * * ncdu / -o ~/log/disk_$(date +\%Y\%m\%d_\%H\%M\%S).json</p>
+<h3 id="side-notes">Side Notes</h3>
+<ul>
+<li>About <code>systemctl</code> </li>
+<li>
+<p><code>systemctl [start | reload | restart | stop] {{service}}</code></p>
+</li>
+<li>
+<p>About <code>ufw</code> </p>
+</li>
+<li><code>ufw status</code> </li>
+<li><code>ufw allow in {{service}}</code> </li>
+<li>
+<p><code>ufw app list</code> </p>
+</li>
+<li>
+<p>About Apache </p>
+</li>
+<li>apache2.conf 主配置</li>
+<li>ports.conf  配置端口</li>
+<li>conf-available</li>
+<li>conf-enabled </li>
+<li><code>mods-available</code> 安装的插件</li>
+<li><code>mods-enabled</code> 启用的插件</li>
+<li><code>sites-available</code> 待使用的站点</li>
+<li>
+<p><code>sites-enabled</code> 启用的站点</p>
+</li>
+<li>
+<p>查看端口占用情况</p>
+</li>
+</ul>
+<p><code>sudo netstat -tlnp | grep ':80'</code> </p>
+<h3 id="_8">文件描述符</h3>
+<p>&amp;1 表示 序号为1 的 文件描述符，而非文件名为1文件</p>
+<p>2&gt;&amp;1 表示 让文件描述符2指向 文件描述符1所指向的设备</p>
+<h3 id="cloud-server-hexo">cloud server + hexo</h3>
+<ol>
+<li>进入 <code>trace1729.github.io</code>, 输入 <code>hexo new  {post name}</code> 新建博客 </li>
+<li><code>hexo g</code> 生产静态页面 </li>
+<li><code>hexo d</code> 将内容同步至 github </li>
+<li><a href="https://oss.console.aliyun.com/bucket/oss-cn-shanghai/trace1729/object">oss</a> 如果需要将文件上传至云端，可以使用这个</li>
+</ol>
+<h2 id="github">Github</h2>
+<p>Repo 导入 secrets.TOKEN</p>
+<p><img alt="repo" src="https://image-trace.oss-cn-shanghai.aliyuncs.com/img/20231105231248.png" /></p>
+<h2 id="_9">涂鸦区</h2>
+
+
+
+
+
+
+
+
+
+
+
+<div id="__comments">
+
+
+
+<h3>颜色主题调整</h3>
+
+<div class="tx-switch">
+<button data-md-color-scheme="default"><code>default</code></button>
+<button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<script>
+var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+        var attr = this.getAttribute("data-md-color-scheme")
+        document.body.setAttribute("data-md-color-scheme", attr)
+        localStorage.setItem("data-md-color-scheme",attr);
+        updateScheme();
+        })
+})
+</script>
+
+<div class="tx-switch">
+<button class="button1" data-md-color-primary="red" style="background-color:red">red</button>
+<button class="button1" data-md-color-primary="pink" style="background-color:pink;color:black">pink</button>
+<button class="button1" data-md-color-primary="purple" style="background-color:purple">purple</button>
+<button class="button1" data-md-color-primary="indigo" style="background-color:indigo">indigo</button>
+<button class="button1" data-md-color-primary="blue" style="background-color:blue">blue</button>
+<button class="button1" data-md-color-primary="cyan" style="background-color:cyan;color:black">cyan</button>
+<button class="button1" data-md-color-primary="teal" style="background-color:teal">teal</button>
+<button class="button1" data-md-color-primary="green" style="background-color:green">green</button>
+<button class="button1" data-md-color-primary="lime" style="background-color:lime;color:black">lime</button>
+<button class="button1" data-md-color-primary="orange" style="background-color:orange;color:black">orange</button>
+<button class="button1" data-md-color-primary="brown" style="background-color:brown;border-radius:3px">brown</button>
+<button class="button1" data-md-color-primary="grey" style="background-color:grey">grey</button>
+<button class="button1" data-md-color-primary="black" style="background-color:black">black</button>
+<button class="button1" data-md-color-primary="white" style="background-color:white;color:black">white</button>
+</div>
+
+<script>
+var buttons = document.querySelectorAll("button[data-md-color-primary]")
+buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+        var attr = this.getAttribute("data-md-color-primary")
+        document.body.setAttribute("data-md-color-primary", attr)
+        localStorage.setItem("data-md-color-primary",attr);
+        })
+})
+</script>
+
+<h2 ><!-- 评论 -->评论区~</h2>
+
+
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="trace1729/NCU-CS-BaoYan"
+        data-repo-id="R_kgDOJ_FoOw"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOJ_FoO84CYMDD"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2021010071号-1</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
